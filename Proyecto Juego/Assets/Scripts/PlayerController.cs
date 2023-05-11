@@ -8,7 +8,11 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D theRB;
     public float jumpForce;
-
+    
+    // suelo
+    public Transform groundedCheckpoint;
+    public LayerMask whatIsGround;
+    private bool isGrounded;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +23,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         
+        isGrounded = Physics2D.OverlapCircle(groundedCheckpoint.position, .2f, whatIsGround);
+
         theRB.velocity = new Vector2(moveSpeed * Input.GetAxisRaw("Horizontal") , theRB.velocity.y);
 
         if(Input.GetButtonDown("Jump"))
         {
-            theRB.velocity = new Vector2(theRB.velocity.x, jumpForce  );
+            if(isGrounded)
+            {
+                theRB.velocity = new Vector2(theRB.velocity.x, jumpForce  );
+            }
         }
     }
 }
