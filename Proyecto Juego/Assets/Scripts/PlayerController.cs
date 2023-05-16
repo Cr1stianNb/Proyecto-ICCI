@@ -13,10 +13,18 @@ public class PlayerController : MonoBehaviour
     public Transform groundedCheckpoint;
     public LayerMask whatIsGround;
     private bool isGrounded;
+
+    // animator
+
+    private Animator anim;
+    private SpriteRenderer theSR;
+    // 
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
+        theSR = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -34,5 +42,18 @@ public class PlayerController : MonoBehaviour
                 theRB.velocity = new Vector2(theRB.velocity.x, jumpForce  );
             }
         }
+
+
+        anim.SetFloat("velocidadMov", Mathf.Abs(theRB.velocity.x));
+
+        if(theRB.velocity.x < 0)
+        {
+            theSR.flipX = true;
+        }
+        else if(theRB.velocity.x > 0)
+        {
+            theSR.flipX = false;
+        }
+        
     }
 }
