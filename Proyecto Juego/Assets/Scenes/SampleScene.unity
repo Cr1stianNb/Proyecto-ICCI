@@ -359,7 +359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   theRB: {fileID: 324915634}
-  jumpForce: 7
+  jumpForce: 8
   groundedCheckpoint: {fileID: 284506124}
   whatIsGround:
     serializedVersion: 2

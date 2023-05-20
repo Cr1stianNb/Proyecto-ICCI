@@ -17,6 +17,13 @@ public class PlayerController : MonoBehaviour
 
     public float tiempoEnElAire;
     public int cantSalto;
+    
+    private float coyoteTime = 0.2f;
+    private float contadorCoyoteTime;
+
+    private float potenciadorTiempoSalto = 0.2f;
+    private float contadorPotenciadorSalto;
+
     // animator
 
     private Animator anim;
@@ -34,11 +41,44 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        RaycastHit2D raycastSuelo = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, whatIsGround);
+      //  RaycastHit2D raycastSuelo = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, whatIsGround);
         isGrounded = Physics2D.OverlapCircle(groundedCheckpoint.position, .2f, whatIsGround);
 
         theRB.velocity = new Vector2(moveSpeed * Input.GetAxisRaw("Horizontal") , theRB.velocity.y);
 
+
+        if(isGrounded)
+        {
+            contadorCoyoteTime = coyoteTime ;
+        }
+        else
+        {
+            contadorCoyoteTime -= Time.deltaTime;
+        }
+        if(Input.GetButtonDown("Jump"))
+        {
+            contadorPotenciadorSalto = potenciadorTiempoSalto;
+        }
+        else
+        {
+            contadorPotenciadorSalto -= Time.deltaTime;
+        }
+
+        if( contadorCoyoteTime > 0f && contadorPotenciadorSalto > 0f)
+        {
+            theRB.velocity = new Vector2(theRB.velocity.x, jumpForce); 
+            contadorPotenciadorSalto = 0f;
+        }
+
+        if(Input.GetButtonUp("Jump") && theRB.velocity.y > 0f)
+        {
+            theRB.velocity = new Vector2(theRB.velocity.x , theRB.velocity.y * 0.5f);
+            contadorCoyoteTime = 0f;
+        }
+
+
+
+        /*
         if(raycastSuelo == true)
         {
             tiempoEnElAire = 0;
@@ -66,6 +106,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+        */
 
 
         anim.SetFloat("velocidadMov", Mathf.Abs(theRB.velocity.x));
