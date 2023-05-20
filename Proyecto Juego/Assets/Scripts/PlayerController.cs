@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsGround;
     private bool isGrounded;
 
+
+    public float tiempoEnElAire;
+    public int cantSalto;
     // animator
 
     private Animator anim;
@@ -30,17 +33,38 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        RaycastHit2D raycastSuelo = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, whatIsGround);
         isGrounded = Physics2D.OverlapCircle(groundedCheckpoint.position, .2f, whatIsGround);
 
         theRB.velocity = new Vector2(moveSpeed * Input.GetAxisRaw("Horizontal") , theRB.velocity.y);
 
+        if(raycastSuelo == true)
+        {
+            tiempoEnElAire = 0;
+            cantSalto = 0;
+        }
+        else
+        {
+            tiempoEnElAire += Time.deltaTime;
+        }
+
         if(Input.GetButtonDown("Jump"))
         {
-            if(isGrounded)
+            if(raycastSuelo == true)
             {
-                theRB.velocity = new Vector2(theRB.velocity.x, jumpForce  );
+                theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                cantSalto = cantSalto + 1 ;
             }
+            else
+            {
+                if(tiempoEnElAire < 0.25f  && cantSalto < 1)
+                {
+                    theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                    cantSalto = cantSalto + 1;
+                }
+            }
+
         }
 
 
@@ -57,3 +81,8 @@ public class PlayerController : MonoBehaviour
         
     }
 }
+
+//if(isGrounded)
+ //           {
+  //              theRB.velocity = new Vector2(theRB.velocity.x, jumpForce  );
+   //         }
