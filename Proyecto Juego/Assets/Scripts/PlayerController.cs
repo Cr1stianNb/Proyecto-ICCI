@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask wallLayer;
 
     private bool isGrounded;
-    private bool isFlip=true;
+    public bool isFlip=false;
 
 
     private float tiempoEnElAire;
@@ -40,6 +40,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 wallJumpingPower = new Vector2(6f, 8f);
 
 
+    public Transform controladorDisparo;
+
+
     // animator
 
     private Animator anim;
@@ -58,7 +61,7 @@ public class PlayerController : MonoBehaviour
     {
 
       //  RaycastHit2D raycastSuelo = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, whatIsGround);
-        isGrounded = Physics2D.OverlapCircle(groundedCheckpoint.position, .2f, whatIsGround);
+        isGrounded = Physics2D.OverlapCircle(groundedCheckpoint.position, 0.15f, whatIsGround);
         horizontal = Input.GetAxisRaw("Horizontal");
 
         if(!isWallJumping)
@@ -97,13 +100,17 @@ public class PlayerController : MonoBehaviour
             contadorCoyoteTime = 0f;
         }
 
+        
+        wallSlide();
+        wallJump();
+
+
         if(!isWallJumping)
         {
-            isFlip = FlipSprite(isFlip);
+            isFlip = FlipSprite();
         }
-        wallSlide();
-        wallJump(isFlip);
        
+     
 
         anim.SetFloat("velocidadMov", Mathf.Abs(theRB.velocity.x));
 
@@ -132,16 +139,19 @@ public class PlayerController : MonoBehaviour
       }
     }
 
-    private bool FlipSprite(bool isFlip)
+    public bool FlipSprite()
     {
-        if(theRB.velocity.x < 0f)
+        if(theRB.velocity.x < 0f && !isFlip)
         {
-            theSR.flipX = true;
+           // theSR.flipX = true;
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
             return true;
+
         }
-        else if(theRB.velocity.x > 0f)
+        else if(theRB.velocity.x > 0f && isFlip)
         {
-            theSR.flipX = false;
+            //theSR.flipX = false;
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
             return false;
         }
         if(isFlip)
@@ -155,7 +165,7 @@ public class PlayerController : MonoBehaviour
            
     }
 
-    private void wallJump(bool isFlip)
+    private void wallJump()
     {
         if(isWallSliding)
         {
@@ -181,16 +191,17 @@ public class PlayerController : MonoBehaviour
             isWallJumping = true;
             theRB.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y); 
             wallJumpingCounter = 0f;
-
+            
             if( wallJumpingDirection == 1 && isFlip)
             {
-                isFlip = FlipSprite(isFlip);
+                isFlip = FlipSprite();
             }
             else if( wallJumpingDirection == -1 && !isFlip) 
             {
-                isFlip = FlipSprite(isFlip);
+                isFlip = FlipSprite();
             }
-
+            
+           
             Invoke(nameof(StopWallJumping), wallJumpingDuration);
             
 
@@ -233,5 +244,27 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
+        }
+
+         if(theRB.velocity.x < 0f && !isFlip)
+        {
+            theSR.flipX = true;
+           
+            return true;
+
+        }
+        else if(theRB.velocity.x > 0f && isFlip)
+        {
+            theSR.flipX = false;
+            
+            return false;
+        }
+        if(isFlip)
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
         }
         */
