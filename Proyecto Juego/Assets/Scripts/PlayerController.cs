@@ -17,14 +17,14 @@ public class PlayerController : MonoBehaviour
     public LayerMask wallLayer;
 
     private bool isGrounded;
-    private bool isFlip;
+    private bool isFlip=true;
 
 
-    public float tiempoEnElAire;
-    public int cantSalto;
+    private float tiempoEnElAire;
+    private int cantSalto;
 
-    public bool isWallSliding;
-    public float wallSlidingSpeed = 2f;
+    private bool isWallSliding;
+    private float wallSlidingSpeed = 2f;
     
     private float coyoteTime = 0.2f;
     private float contadorCoyoteTime;
@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
         if(!isWallJumping)
         {
-            isFlip = FlipSprite();
+            isFlip = FlipSprite(isFlip);
         }
         wallSlide();
         wallJump(isFlip);
@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
       }
     }
 
-    private bool FlipSprite()
+    private bool FlipSprite(bool isFlip)
     {
         if(theRB.velocity.x < 0f)
         {
@@ -144,7 +144,15 @@ public class PlayerController : MonoBehaviour
             theSR.flipX = false;
             return false;
         }
-        return false;
+        if(isFlip)
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+           
     }
 
     private void wallJump(bool isFlip)
@@ -176,11 +184,11 @@ public class PlayerController : MonoBehaviour
 
             if( wallJumpingDirection == 1 && isFlip)
             {
-                isFlip = FlipSprite();
+                isFlip = FlipSprite(isFlip);
             }
             else if( wallJumpingDirection == -1 && !isFlip) 
             {
-                isFlip = FlipSprite();
+                isFlip = FlipSprite(isFlip);
             }
 
             Invoke(nameof(StopWallJumping), wallJumpingDuration);
