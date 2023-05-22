@@ -19,10 +19,11 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     public bool isFlip=false;
 
+    static public bool isDoubleJump;
+    public bool canDoubleJump;
 
     private float tiempoEnElAire;
-    private int cantSalto;
-
+    
     private bool isWallSliding;
     private float wallSlidingSpeed = 2f;
     
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
     private float potenciadorTiempoSalto = 0.2f;
     private float contadorPotenciadorSalto;
 
+    static public bool canWallJump = false;
     private bool isWallJumping;
     private float wallJumpingDirection;
     private float wallJumpingTime = 0.2f;
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
     public Transform controladorDisparo;
 
+    public int cantSalto;
 
     // animator
 
@@ -69,40 +72,67 @@ public class PlayerController : MonoBehaviour
             theRB.velocity = new Vector2(moveSpeed * horizontal , theRB.velocity.y);
 
         }
-        
 
+
+       
         if(isGrounded)
-        {
-            contadorCoyoteTime = coyoteTime ;
-        }
-        else
-        {
-            contadorCoyoteTime -= Time.deltaTime;
-        }
+            {
+                contadorCoyoteTime = coyoteTime ;
+
+                if(isDoubleJump)
+                {
+                    canDoubleJump = true;
+                }
+                else 
+                {
+                    canDoubleJump = false;
+                }
+            }
+        else 
+            {
+                contadorCoyoteTime -= Time.deltaTime;
+            }
+            
+        if(Input.GetButtonUp("Jump") && theRB.velocity.y > 0f)
+            {
+                theRB.velocity = new Vector2(theRB.velocity.x , theRB.velocity.y * 0.5f);
+                contadorCoyoteTime = 0f;
+            }
+
         if(Input.GetButtonDown("Jump"))
-        {
-            contadorPotenciadorSalto = potenciadorTiempoSalto;
+            {
+                contadorPotenciadorSalto = potenciadorTiempoSalto;
+            if(contadorCoyoteTime > 0f && contadorPotenciadorSalto > 0f)
+            {
+                theRB.velocity = new Vector2( theRB.velocity.x , jumpForce);
+                contadorPotenciadorSalto = 0f;
+            }else 
+            {
+                if(!isWallSliding)
+                {
+                    if(canDoubleJump)
+                    {
+                        theRB.velocity = new Vector2(theRB.velocity.x , jumpForce);
+                        canDoubleJump = false;
+                    }
+                }
+            }
+       
         }
-        else
+        else 
         {
             contadorPotenciadorSalto -= Time.deltaTime;
         }
+            
+    
 
-        if( contadorCoyoteTime > 0f && contadorPotenciadorSalto > 0f)
+       
+        if(canWallJump)
         {
-            theRB.velocity = new Vector2(theRB.velocity.x, jumpForce); 
-            contadorPotenciadorSalto = 0f;
+            wallSlide();
+            wallJump();
         }
-
-        if(Input.GetButtonUp("Jump") && theRB.velocity.y > 0f)
-        {
-            theRB.velocity = new Vector2(theRB.velocity.x , theRB.velocity.y * 0.5f);
-            contadorCoyoteTime = 0f;
-        }
-
-        
-        wallSlide();
-        wallJump();
+           
 
 
         if(!isWallJumping)
