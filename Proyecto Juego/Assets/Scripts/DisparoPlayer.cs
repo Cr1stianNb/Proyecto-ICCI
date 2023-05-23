@@ -8,14 +8,29 @@ public class DisparoPlayer : MonoBehaviour
 
 
     public Transform controladorDisparo;
+    public Transform controladorDisparoHalf;
+    public Transform controladorPunter;
+    private float angulo ;
     public GameObject bala;
 
     private void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        /*
+        if(Input.GetButtonDown("Fire1") && Input.GetKey(KeyCode.S))
+        {
+            DispararMedio();
+        }
+        else if(Input.GetButtonDown("Fire1"))
         {
            Disparar();
         }
+        */
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            DispararMouse();
+        }
+        
 
 
 
@@ -24,6 +39,32 @@ public class DisparoPlayer : MonoBehaviour
     private void Disparar()
     {
         Instantiate(bala, controladorDisparo.position, controladorDisparo.rotation);
+    }
+
+    private void DispararMedio()
+    {
+        Instantiate(bala, controladorDisparoHalf.position, controladorDisparoHalf.rotation);
+    }
+
+    private void DispararMouse()
+    {
+        if(Mathf.Abs(controladorDisparoHalf.position.x - controladorPunter.position.x) != 0)
+        {
+            angulo = Mathf.Rad2Deg * (Mathf.Atan((controladorDisparoHalf.position.y - controladorPunter.position.y)/(controladorDisparoHalf.position.x - controladorPunter.position.x)));
+            Debug.Log(angulo);
+            
+            if((controladorDisparoHalf.position.y > controladorPunter.position.y) && controladorDisparoHalf.position.x > controladorPunter.position.x )
+            {
+                angulo += 180;
+            }
+            if(controladorPunter.position.y > controladorDisparoHalf.position.y && controladorDisparoHalf.position.x > controladorPunter.position.x )
+            {
+                angulo += 180;
+            }
+            
+            Instantiate(bala, controladorDisparoHalf.position, Quaternion.Euler(Vector3.forward * angulo));
+        }
+           
     }
 
 

@@ -11,9 +11,9 @@ public class Bala : MonoBehaviour
   
     
 
- 
+        
 
-  
+    
 
     void Update()
     {
