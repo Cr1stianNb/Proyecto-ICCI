@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     private bool isWallSliding;
     private float wallSlidingSpeed = 2f;
     
-    private float coyoteTime = 0.2f;
+    private float coyoteTime = 0.5f;
     private float contadorCoyoteTime;
 
     private float potenciadorTiempoSalto = 0.2f;
@@ -40,7 +40,8 @@ public class PlayerController : MonoBehaviour
     private float wallJumpingCounter;
     private float wallJumpingDuration = 0.4f;
     private Vector2 wallJumpingPower = new Vector2(6f, 8f);
-
+    private bool isDoubleJumping;
+   
 
     public Transform controladorDisparo;
 
@@ -82,11 +83,13 @@ public class PlayerController : MonoBehaviour
        
         if(isGrounded)
             {
+                
                 contadorCoyoteTime = coyoteTime ;
 
                 if(isDoubleJump)
                 {
                     canDoubleJump = true;
+                    
                 }
                 else 
                 {
@@ -102,17 +105,21 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             inputBuffer.Enqueue(KeyCode.Space);
-            Invoke("quitarAccion", 0.2f);
+            Invoke("quitarAccion", 0.1f);
             Debug.Log(inputBuffer.Count);
         }
 
 
             
-        if(Input.GetButtonUp("Jump") && theRB.velocity.y > 0f && !isWallSliding)
-            {
-                theRB.velocity = new Vector2(theRB.velocity.x , theRB.velocity.y * 0.5f);
-                contadorCoyoteTime = 0f;
-            }
+        if(Input.GetButtonUp("Jump") && theRB.velocity.y > 0 && !isWallSliding )
+        {
+            theRB.velocity = new Vector2(theRB.velocity.x ,  theRB.velocity.y * 0.6f);
+            contadorCoyoteTime = 0f;
+            
+        }
+        
+        
+
         if(inputBuffer.Count > 0)
         {
             if(inputBuffer.Peek() == KeyCode.Space && !isWallSliding)
@@ -122,20 +129,24 @@ public class PlayerController : MonoBehaviour
                 {
                     theRB.velocity = new Vector2( theRB.velocity.x , jumpForce);
                     contadorPotenciadorSalto = 0f;
+                    
                     quitarAccion();
                     
                         
                 }else 
                 {
-                    if(!isWallSliding)
+                    if(!isWallSliding && inputBuffer.Count > 0)
                     {
-                        if(canDoubleJump)
+                        if(canDoubleJump && inputBuffer.Peek() == KeyCode.Space )
                         {
+                        
                             theRB.velocity = new Vector2(theRB.velocity.x , jumpForce);
                             canDoubleJump = false;
                             quitarAccion();
                             
+                            
                         }
+
                     }
                 }
         
