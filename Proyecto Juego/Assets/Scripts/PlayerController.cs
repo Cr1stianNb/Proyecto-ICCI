@@ -46,6 +46,10 @@ public class PlayerController : MonoBehaviour
 
     public int cantSalto;
 
+    // input buffer
+
+    private Queue<KeyCode> inputBuffer;
+
     // animator
 
     private Animator anim;
@@ -57,6 +61,7 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         theSR = GetComponent<SpriteRenderer>();
+        inputBuffer = new Queue<KeyCode>();
     }
 
     // Update is called once per frame
@@ -92,36 +97,53 @@ public class PlayerController : MonoBehaviour
             {
                 contadorCoyoteTime -= Time.deltaTime;
             }
+
+
+        if(Input.GetButtonDown("Jump"))
+        {
+            inputBuffer.Enqueue(KeyCode.Space);
+            Invoke("quitarAccion", 0.2f);
+            Debug.Log(inputBuffer.Count);
+        }
+
+
             
         if(Input.GetButtonUp("Jump") && theRB.velocity.y > 0f && !isWallSliding)
             {
                 theRB.velocity = new Vector2(theRB.velocity.x , theRB.velocity.y * 0.5f);
                 contadorCoyoteTime = 0f;
             }
-
-        if(Input.GetButtonDown("Jump") && !isWallSliding)
-            {
-            contadorPotenciadorSalto = potenciadorTiempoSalto;
-            if(contadorCoyoteTime > 0f && contadorPotenciadorSalto > 0f)
-            {
-                theRB.velocity = new Vector2( theRB.velocity.x , jumpForce);
-                contadorPotenciadorSalto = 0f;
-            }else 
-            {
-                if(!isWallSliding)
+        if(inputBuffer.Count > 0)
+        {
+            if(inputBuffer.Peek() == KeyCode.Space && !isWallSliding)
                 {
-                    if(canDoubleJump)
+                contadorPotenciadorSalto = potenciadorTiempoSalto;
+                if(contadorCoyoteTime > 0f && contadorPotenciadorSalto > 0f)
+                {
+                    theRB.velocity = new Vector2( theRB.velocity.x , jumpForce);
+                    contadorPotenciadorSalto = 0f;
+                    quitarAccion();
+                    
+                        
+                }else 
+                {
+                    if(!isWallSliding)
                     {
-                        theRB.velocity = new Vector2(theRB.velocity.x , jumpForce);
-                        canDoubleJump = false;
+                        if(canDoubleJump)
+                        {
+                            theRB.velocity = new Vector2(theRB.velocity.x , jumpForce);
+                            canDoubleJump = false;
+                            quitarAccion();
+                            
+                        }
                     }
                 }
+        
             }
-       
-        }
-        else 
-        {
-            contadorPotenciadorSalto -= Time.deltaTime;
+            else 
+            {
+                contadorPotenciadorSalto -= Time.deltaTime;
+            }
         }
             
     
@@ -215,7 +237,7 @@ public class PlayerController : MonoBehaviour
         {
             wallJumpingCounter -= Time.deltaTime;
         }
-
+            // Jump
         if(Input.GetButtonDown("Jump") && wallJumpingCounter > 0f)
         {
             isWallJumping = true;
@@ -244,6 +266,14 @@ public class PlayerController : MonoBehaviour
     {
         isWallJumping = false;
 
+    }
+
+    private void quitarAccion()
+    {
+       if(inputBuffer.Count > 0)
+       {
+         inputBuffer.Dequeue();
+       }
     }
 }
 
