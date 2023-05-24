@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundedCheckpoint.position, 0.15f, whatIsGround);
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if(!isWallJumping)
+        if(!isWallJumping )
         {
             theRB.velocity = new Vector2(moveSpeed * horizontal , theRB.velocity.y);
 
@@ -93,15 +93,15 @@ public class PlayerController : MonoBehaviour
                 contadorCoyoteTime -= Time.deltaTime;
             }
             
-        if(Input.GetButtonUp("Jump") && theRB.velocity.y > 0f)
+        if(Input.GetButtonUp("Jump") && theRB.velocity.y > 0f && !isWallSliding)
             {
                 theRB.velocity = new Vector2(theRB.velocity.x , theRB.velocity.y * 0.5f);
                 contadorCoyoteTime = 0f;
             }
 
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") && !isWallSliding)
             {
-                contadorPotenciadorSalto = potenciadorTiempoSalto;
+            contadorPotenciadorSalto = potenciadorTiempoSalto;
             if(contadorCoyoteTime > 0f && contadorPotenciadorSalto > 0f)
             {
                 theRB.velocity = new Vector2( theRB.velocity.x , jumpForce);
@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour
       {
         isWallSliding = true;
         theRB.velocity = new Vector2(theRB.velocity.x, Mathf.Clamp(theRB.velocity.y, -wallSlidingSpeed, float.MaxValue));
-      }
+      }                     // theRB.velocity.x
       else
       {
         isWallSliding = false;
@@ -199,7 +199,7 @@ public class PlayerController : MonoBehaviour
     {
         if(isWallSliding)
         {
-            isWallJumping = false;
+           isWallJumping = false;
            if(isFlip)
            {
             wallJumpingDirection = 1;
