@@ -9,13 +9,13 @@ public class DisparoPlayer : MonoBehaviour
 
     public Transform controladorDisparo;
     public Transform controladorDisparoHalf;
-    public Transform controladorPunter;
+   // public Transform controladorPunter;
     private float angulo ;
     public GameObject bala;
 
     private void Update()
     {
-        /*
+        
         if(Input.GetButtonDown("Fire1") && Input.GetKey(KeyCode.S))
         {
             DispararMedio();
@@ -24,13 +24,13 @@ public class DisparoPlayer : MonoBehaviour
         {
            Disparar();
         }
-        */
-
+        
+        /*
         if(Input.GetButtonDown("Fire1"))
         {
             DispararMouse();
         }
-        
+        */
 
 
 
@@ -46,6 +46,7 @@ public class DisparoPlayer : MonoBehaviour
         Instantiate(bala, controladorDisparoHalf.position, controladorDisparoHalf.rotation);
     }
 
+    /*
     private void DispararMouse()
     {
         if(Mathf.Abs(controladorDisparoHalf.position.x - controladorPunter.position.x) != 0)
@@ -66,6 +67,7 @@ public class DisparoPlayer : MonoBehaviour
         }
            
     }
+    */
 
 
 
