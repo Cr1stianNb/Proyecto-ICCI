@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SpriteCharacterWallJump-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 7
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca9cb689edf6fc4cb23b72f94e10392
+      internalID: 1779774765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteCharacterWallJump-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 7
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b65b1639b87c5f4cbd9d3dac62ff511
+      internalID: 1255459726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteCharacterWallJump-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 8
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2ab2fd325d915c4e9700a54812af0e0
+      internalID: -1148948368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteCharacterWallJump-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 8
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8182b54c8a460b4d80bcb11d9877b0a
+      internalID: -388624658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteCharacterWallJump-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 8
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bdb4649ab308d74886de9fbee774562
+      internalID: -605430282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteCharacterWallJump-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 8
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 280bd28df71a5664da060971c70510f1
+      internalID: 993675360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteCharacterWallJump-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 8
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8204d381e195fc4d9d36188da77c98e
+      internalID: -1530522279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteCharacterWallJump-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 8
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d8307e5b2491545ad04a9850b38753
+      internalID: -1565615842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +282,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SpriteCharacterWallJump-Sheet_0: 1779774765
+      SpriteCharacterWallJump-Sheet_1: 1255459726
+      SpriteCharacterWallJump-Sheet_2: -1148948368
+      SpriteCharacterWallJump-Sheet_3: -388624658
+      SpriteCharacterWallJump-Sheet_4: -605430282
+      SpriteCharacterWallJump-Sheet_5: 993675360
+      SpriteCharacterWallJump-Sheet_6: -1530522279
+      SpriteCharacterWallJump-Sheet_7: -1565615842
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
