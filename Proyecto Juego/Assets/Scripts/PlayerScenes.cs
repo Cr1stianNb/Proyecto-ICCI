@@ -9,6 +9,9 @@ public class PlayerScenes : MonoBehaviour
 
     void Start()
     {
+
+        Debug.Log(PlayerPrefs.GetString("LastExitName"));
+
         if(instance != null)
         {
             Destroy(gameObject);

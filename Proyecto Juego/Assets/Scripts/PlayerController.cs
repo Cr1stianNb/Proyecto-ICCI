@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     
     // suelo
     public Transform groundedCheckpoint;
+    public float radioSuelo;
     public LayerMask whatIsGround;
     public Transform wallCheck;
     public LayerMask wallLayer;
@@ -65,6 +66,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetString("LastExitName", "");
         anim = GetComponent<Animator>();
         theSR = GetComponent<SpriteRenderer>();
         inputBuffer = new Queue<KeyCode>();
@@ -75,7 +77,7 @@ public class PlayerController : MonoBehaviour
     {
 
       //  RaycastHit2D raycastSuelo = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, whatIsGround);
-        isGrounded = Physics2D.OverlapCircle(groundedCheckpoint.position, 0.15f, whatIsGround);
+        isGrounded = Physics2D.OverlapCircle(groundedCheckpoint.position, radioSuelo, whatIsGround);
         horizontal = Input.GetAxisRaw("Horizontal");
 
        
@@ -107,7 +109,7 @@ public class PlayerController : MonoBehaviour
         {
             inputBuffer.Enqueue(KeyCode.Space);
             Invoke("quitarAccion", 0.1f);
-            Debug.Log(inputBuffer.Count);
+           // Debug.Log(inputBuffer.Count);
         }
 
 
@@ -277,18 +279,19 @@ public class PlayerController : MonoBehaviour
     }
 
     public bool FlipSprite()
-    {
-        if(theRB.velocity.x < 0f && !isFlip)
+    {   // theRB.velocity.x < 0f &&
+        if( !isFlip && horizontal < 0)
         {
            // theSR.flipX = true;
             transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
             return true;
 
         }
-        else if(theRB.velocity.x > 0f && isFlip)
+        //theRB.velocity.x > 0f &&
+        else if( isFlip && horizontal > 0)
         {
             //theSR.flipX = false;
-            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
             return false;
         }
         if(isFlip)
@@ -366,6 +369,12 @@ public class PlayerController : MonoBehaviour
        {
          inputBuffer.Dequeue();
        }
+    }
+
+     private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(groundedCheckpoint.position, radioSuelo);
     }
 }
 
