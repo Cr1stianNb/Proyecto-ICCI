@@ -7,8 +7,10 @@ public class CombateMele : MonoBehaviour
 
 
 public Transform controladorGolpe;
+
 public float radioGolpe;
 public float danioGolpe;
+
 
 public float tiempoEntreAtaque;
 public float tiempoSiguienteAtaque;
@@ -19,6 +21,7 @@ private Animator animator;
     private void Start()
     {
         animator = GetComponent<Animator>();
+       
     }
     // Update is called once per frame
     void Update()
@@ -36,6 +39,7 @@ private Animator animator;
 
     private void Golpe()
     {
+
         animator.SetTrigger("Golpe");
         Collider2D[] objetos = Physics2D.OverlapCircleAll(controladorGolpe.position, radioGolpe);
         Debug.Log("Ataca");
