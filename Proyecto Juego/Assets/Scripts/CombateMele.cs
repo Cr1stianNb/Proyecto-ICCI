@@ -13,7 +13,13 @@ public float danioGolpe;
 public float tiempoEntreAtaque;
 public float tiempoSiguienteAtaque;
 
+
+private Animator animator;
     
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -30,6 +36,7 @@ public float tiempoSiguienteAtaque;
 
     private void Golpe()
     {
+        animator.SetTrigger("Golpe");
         Collider2D[] objetos = Physics2D.OverlapCircleAll(controladorGolpe.position, radioGolpe);
         Debug.Log("Ataca");
         foreach(Collider2D colisionador in objetos)
