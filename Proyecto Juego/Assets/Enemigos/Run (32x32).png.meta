@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cde60b12bee9a4548b250a5e8522dd3a
+guid: 51b69447970f8dc41bd2c98e49d45f29
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: murcielago_0
+      name: Run (32x32)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74fcfaa354bd60446aa425c76213a0a2
-      internalID: -1115289402
+      spriteID: b9989bb52ec8ac04a9362bad200b8947
+      internalID: 1932992549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: murcielago_1
+      name: Run (32x32)_1
       rect:
         serializedVersion: 2
         x: 32
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d95880f371f4f0a439aa72a4a49e983e
-      internalID: 1788315531
+      spriteID: 3b105115e4205f14392708f50438c1f1
+      internalID: -1176322210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: murcielago_2
+      name: Run (32x32)_2
       rect:
         serializedVersion: 2
         x: 64
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e33edfff12356ac4a86e2e3261c133f2
-      internalID: 1078868363
+      spriteID: 311897201c40d304795301b5ed9c9866
+      internalID: 1537068747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: murcielago_3
+      name: Run (32x32)_3
       rect:
         serializedVersion: 2
         x: 96
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 707be7a9e20c08148ae7a115db43c337
-      internalID: -1050779464
+      spriteID: e10296d433471144f8881707ffbe24f8
+      internalID: 1046385113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: murcielago_4
+      name: Run (32x32)_4
       rect:
         serializedVersion: 2
         x: 128
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18e15e563234fad4fa58893eb2aa99ef
-      internalID: -2046174962
+      spriteID: 937eec72b43d4b148b0e4d5b0668f34a
+      internalID: -676615562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: murcielago_5
+      name: Run (32x32)_5
       rect:
         serializedVersion: 2
         x: 160
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1a4772107c41024ba15afa85486714e
-      internalID: -1291205885
+      spriteID: 1905f1f78782c6548b34eac6c36c6715
+      internalID: -640063431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: murcielago_6
+      name: Run (32x32)_6
       rect:
         serializedVersion: 2
         x: 192
@@ -245,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbbd62508af30a94da4c4a44de93c240
-      internalID: -1156552067
+      spriteID: 9e1b589772d412f498c5c70837842d63
+      internalID: -1916025196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: murcielago_7
+      name: Run (32x32)_7
       rect:
         serializedVersion: 2
         x: 224
@@ -266,8 +266,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfe9d51be05c76743b14f1b5205f970e
-      internalID: 200604026
+      spriteID: 94939e7904557ac48b1f2990bbaf21c2
+      internalID: -888604146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f28d8fccaff67c47bc3f1efcd148edf
+      internalID: 362399659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc89b5f11b1995f4aac915e29a63be44
+      internalID: -1219981687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f4296b71d859b448be822ca087d6ab9
+      internalID: -2036372293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b96057734778f024b92c9432300db331
+      internalID: -1558273625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e5dd6a99270efd489398802f7764772
+      internalID: -1918386020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb23223946b570c40b92c492db3615e2
+      internalID: -692619867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_14
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752b9618ac5d6fc4dbc52da0db461114
+      internalID: -934329363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_15
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edb5f3dd47147e642add2cfcd6090356
+      internalID: -1753445275
       vertices: []
       indices: 
       edges: []
@@ -283,14 +451,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      murcielago_0: -1115289402
-      murcielago_1: 1788315531
-      murcielago_2: 1078868363
-      murcielago_3: -1050779464
-      murcielago_4: -2046174962
-      murcielago_5: -1291205885
-      murcielago_6: -1156552067
-      murcielago_7: 200604026
+      Run (32x32)_0: 1932992549
+      Run (32x32)_1: -1176322210
+      Run (32x32)_10: -2036372293
+      Run (32x32)_11: -1558273625
+      Run (32x32)_12: -1918386020
+      Run (32x32)_13: -692619867
+      Run (32x32)_14: -934329363
+      Run (32x32)_15: -1753445275
+      Run (32x32)_2: 1537068747
+      Run (32x32)_3: 1046385113
+      Run (32x32)_4: -676615562
+      Run (32x32)_5: -640063431
+      Run (32x32)_6: -1916025196
+      Run (32x32)_7: -888604146
+      Run (32x32)_8: 362399659
+      Run (32x32)_9: -1219981687
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
