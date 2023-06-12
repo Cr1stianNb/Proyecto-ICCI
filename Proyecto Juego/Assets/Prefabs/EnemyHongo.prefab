@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9201893929829069598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.15, y: -0.038, z: 0}
+  m_LocalPosition: {x: 1.33, y: -0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 9201893930231324406}
   - component: {fileID: 9201893930231324407}
   - component: {fileID: 9201893930231324169}
+  - component: {fileID: 565885277}
   m_Layer: 0
   m_Name: EnemyHongo
   m_TagString: Enemigo
@@ -58,7 +59,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9201893930231324402}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.829, y: -2.407, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -155,6 +156,19 @@ MonoBehaviour:
   theSR: {fileID: 9201893930701680790}
   moveTime: 3
   waitTime: 2
+--- !u!114 &565885277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201893930231324402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03fe8c96aa71284f8992e6661241a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 50
 --- !u!1 &9201893930701680788
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9201893931676933140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3, y: -0.047, z: 0}
+  m_LocalPosition: {x: -2.3, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

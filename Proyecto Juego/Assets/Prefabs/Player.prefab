@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 98383080}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: ControladoMele
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98383079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.64, y: -0.31, z: 0}
+  m_LocalPosition: {x: 0.052, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 848975327969291455}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Controlador Disparos Medio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848975327969291452}
   m_LocalRotation: {x: 0.3645578, y: 0.11638418, z: 0.17687309, w: 0.9067901}
-  m_LocalPosition: {x: -0.08, y: 1.21, z: 0}
+  m_LocalPosition: {x: 0.127, y: 0.018, z: 0}
   m_LocalScale: {x: 1, y: 1.1237, z: 1.1237}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 848975329179908651}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Controlador Disparos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848975329179908648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.52, y: -0.07, z: 0}
+  m_LocalPosition: {x: 0.088, y: -0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 848975329333744093}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848975329333744090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.33, z: 0}
+  m_LocalPosition: {x: -0.001, y: -0.233, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -141,7 +141,8 @@ GameObject:
   - component: {fileID: 848975329395144808}
   - component: {fileID: 1538131168978197426}
   - component: {fileID: 655060449}
-  m_Layer: 9
+  - component: {fileID: 699416236}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -157,7 +158,7 @@ Transform:
   m_GameObject: {fileID: 848975329395144800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.77, y: -2.86, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 848975329333744093}
@@ -209,7 +210,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3175a9acece4f9c4a9171e5f4758a748, type: 3}
+  m_Sprite: {fileID: -598760196, guid: 3c879b771644ddf4d98d19af6e50318a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -250,12 +251,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 848975329395144800}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 54b1514799c57224ab28e8491f31897c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.011765003, y: -0.21761966}
-  m_Size: {x: 0.48969173, y: 2.2708292}
+  m_Offset: {x: -0.016517162, y: -0.011303782}
+  m_Size: {x: 0.12034798, y: 0.48306155}
   m_Direction: 0
 --- !u!114 &848975329395144807
 MonoBehaviour:
@@ -273,6 +274,7 @@ MonoBehaviour:
   theRB: {fileID: 848975329395144803}
   jumpForce: 4
   groundedCheckpoint: {fileID: 848975329333744093}
+  radioSuelo: 0.07
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
@@ -347,8 +349,23 @@ MonoBehaviour:
   controladorGolpe: {fileID: 98383080}
   radioGolpe: 0.17
   danioGolpe: 30
-  tiempoEntreAtaque: 1
+  tiempoEntreAtaque: 2
   tiempoSiguienteAtaque: 0
+--- !u!114 &699416236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848975329395144800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64401b754ba842042bb2e8a1b1414493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 5
+  invincibleLength: 2
 --- !u!1 &848975329781854820
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +375,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 848975329781854823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848975329781854820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0, z: 0}
+  m_LocalPosition: {x: -0.042, y: -0.027, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
