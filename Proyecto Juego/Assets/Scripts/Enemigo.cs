@@ -25,5 +25,16 @@ public class Enemigo : MonoBehaviour
       //  Instantiate(efectoMuerte, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
+
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.CompareTag("Player"))
+        {
+          
+            collider.GetComponent<PlayerHealthController>().DealDamage();            
+             
+        }
+    }
     
 }
