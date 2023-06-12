@@ -273,9 +273,10 @@ MonoBehaviour:
   theRB: {fileID: 848975329395144803}
   jumpForce: 4
   groundedCheckpoint: {fileID: 848975329333744093}
+  radioSuelo: 0
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 2176
   wallCheck: {fileID: 848975329781854823}
   wallLayer:
     serializedVersion: 2
