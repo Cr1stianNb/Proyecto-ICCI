@@ -31,7 +31,7 @@ public class Enemigo : MonoBehaviour
     {
         if(collider.CompareTag("Player"))
         {
-          
+            
             collider.GetComponent<PlayerHealthController>().DealDamage();            
              
         }
