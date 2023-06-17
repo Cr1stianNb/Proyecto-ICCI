@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerHealthController : MonoBehaviour
 {
 
-   
+   public bool estaMuerto = false;
 
     public int currentHealth, maxHealth;
 
@@ -17,6 +18,12 @@ public class PlayerHealthController : MonoBehaviour
 
     public Transform player;
 
+    public Animator animator;
+
+    public Rigidbody2D rb2D;
+
+    public event EventHandler MuerteJugador;
+
     //private SpriteRenderer theSR;
 
    
@@ -24,7 +31,10 @@ public class PlayerHealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GetComponent<Transform>();
         currentHealth = maxHealth;
+        animator = GetComponent<Animator>();
+        rb2D = GetComponent<Rigidbody2D>();
        // theSR = GetComponent<SpriteRenderer>();
     }
 
@@ -50,11 +60,15 @@ public class PlayerHealthController : MonoBehaviour
            // PlayerControler.instance.anim.SetTrigger("Hurt");
 
 
-             if(currentHealth<=0)
+             if(currentHealth<=0 && !estaMuerto)
             {
-                currentHealth = 0;
-              //  gameObject.SetActive(false);
-
+        
+                rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
+                //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemigo"),true);
+                estaMuerto = true;
+                
+                animator.SetTrigger("Muerte");
+               
 
 
 
@@ -70,6 +84,11 @@ public class PlayerHealthController : MonoBehaviour
         // UIControler.instance.UpdateHealthDisplay();
         }
 
+    }
+
+    public void MuerteJugadorEvento()
+    {
+        MuerteJugador?.Invoke(this, EventArgs.Empty);
     }
 }
 

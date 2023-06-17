@@ -6,21 +6,27 @@ public class CombateMele : MonoBehaviour
 {
 
 
-public Transform controladorGolpe;
+    public Transform controladorGolpe;
 
-public float radioGolpe;
-public float danioGolpe;
-
-
-public float tiempoEntreAtaque;
-public float tiempoSiguienteAtaque;
+    public float radioGolpe;
+    public float danioGolpe;
 
 
-private Animator animator;
+    public float tiempoEntreAtaque;
+    public float tiempoSiguienteAtaque;
+    private Animator animator;
+    public PlayerHealthController playerHealth;
+
+
+
+
+
+
     
     private void Start()
     {
         animator = GetComponent<Animator>();
+        playerHealth = GetComponent<PlayerHealthController>();
        
     }
     // Update is called once per frame
@@ -30,7 +36,7 @@ private Animator animator;
         {
             tiempoSiguienteAtaque -= Time.deltaTime;
         }
-        if(Input.GetButtonDown("Fire2") && tiempoSiguienteAtaque <=0)
+        if(Input.GetButtonDown("Fire2") && tiempoSiguienteAtaque <=0 && !playerHealth.estaMuerto)
         {
             Golpe();
             tiempoSiguienteAtaque = tiempoEntreAtaque;
