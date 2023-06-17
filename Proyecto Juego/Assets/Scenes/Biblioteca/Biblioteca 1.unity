@@ -4524,11 +4524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 848975329395144805, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.069
+      value: -5.083
       objectReference: {fileID: 0}
     - target: {fileID: 848975329395144805, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.675
+      value: 2.544
       objectReference: {fileID: 0}
     - target: {fileID: 848975329395144805, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4815,6 +4815,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jugador: {fileID: 699416234}
+  farBackground: {fileID: 0}
+  middleBackground: {fileID: 0}
   alturaMin: -6
   alturaMax: 10
 --- !u!1 &915566142
