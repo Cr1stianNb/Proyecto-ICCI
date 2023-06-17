@@ -6,7 +6,8 @@ public class Enemigo : MonoBehaviour
 {
   
     public float vida;
-
+    public float cantPuntos;
+    public Puntaje puntaje;
  //   [SerializeField] private GameObject efectoMuerte;
 
 
@@ -23,6 +24,7 @@ public class Enemigo : MonoBehaviour
     private void Muerte()
     {
       //  Instantiate(efectoMuerte, transform.position, Quaternion.identity);
+        puntaje.SumarPuntos(cantPuntos);
         Destroy(gameObject);
     }
 
