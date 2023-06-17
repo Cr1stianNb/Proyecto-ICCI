@@ -117,7 +117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848975329333744090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.005, y: -0.177, z: 0}
+  m_LocalPosition: {x: -0.035, y: -0.259, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -141,7 +141,6 @@ GameObject:
   - component: {fileID: 848975329395144808}
   - component: {fileID: 1538131168978197426}
   - component: {fileID: 655060449}
-  - component: {fileID: 699416243}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -274,7 +273,7 @@ MonoBehaviour:
   theRB: {fileID: 848975329395144803}
   jumpForce: 4
   groundedCheckpoint: {fileID: 848975329333744093}
-  radioSuelo: 0.1
+  radioSuelo: 0.11
   whatIsGround:
     serializedVersion: 2
     m_Bits: 2176
@@ -351,22 +350,6 @@ MonoBehaviour:
   danioGolpe: 30
   tiempoEntreAtaque: 1
   tiempoSiguienteAtaque: 0
---- !u!114 &699416243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848975329395144800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64401b754ba842042bb2e8a1b1414493, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 10
-  invincibleLength: 0
-  player: {fileID: 848975329395144805}
 --- !u!1 &848975329781854820
 GameObject:
   m_ObjectHideFlags: 0
