@@ -10,6 +10,8 @@ public class FlyingEnemyController : MonoBehaviour
 
     public SpriteRenderer theSR;
 
+    public Transform PlayerPosition;
+
     public float distanceToAttackPlayer, chaseSpeed;
 
     // Start is called before the first frame update
@@ -19,13 +21,16 @@ public class FlyingEnemyController : MonoBehaviour
         {
             points[i].parent = null;
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        transform.position = Vector3.MoveTowards(transform.position, points[currentPoint].position, moveSpeed * Time.deltaTime);
+        //if (Vector3.distance(transform.position, PlayerPosition.position) > distanceToAttackPlayer)
+        //{
+            transform.position = Vector3.MoveTowards(transform.position, points[currentPoint].position, moveSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, points[currentPoint].position) < .05f)
         {
@@ -44,5 +49,12 @@ public class FlyingEnemyController : MonoBehaviour
         {
             theSR.flipX = false;
         }
+        //}
+        //else
+        //{
+            //transform.position = Vector3.MoveTowards(transform.position, PlayerPosition.position, chaseSpeed * Time.deltaTime);
+        //}
+        
+            
     }
 }
