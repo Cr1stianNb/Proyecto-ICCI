@@ -7,10 +7,14 @@ public class Enemigo : MonoBehaviour
   
     public float vida;
     public float cantPuntos;
-    public Puntaje puntaje;
+    private Puntaje puntaje;
  //   [SerializeField] private GameObject efectoMuerte;
 
 
+    private void Start()
+    {
+        puntaje = GameObject.Find("Puntaje").GetComponent<Puntaje>();
+    }
 
     public void TomarDanio(float danio)
     {

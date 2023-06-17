@@ -41,12 +41,12 @@ public class ControladorCamara : MonoBehaviour
 
         transform.position = new Vector3(jugador.position.x, Mathf.Clamp(jugador.position.y, alturaMin, alturaMax), transform.position.z);
 
-        Vector2 amountToMove = new Vector2(transform.position.x - lastPos.x, transform.position.y - lastPos.y);
+      //  Vector2 amountToMove = new Vector2(transform.position.x - lastPos.x, transform.position.y - lastPos.y);
 
-        farBackground.position = farBackground.position + new Vector3(amountToMove.x, amountToMove.y, 0f);
-        middleBackground.position += new Vector3(amountToMove.x, amountToMove.y, 0f) * .8f;
+//        farBackground.position = farBackground.position + new Vector3(amountToMove.x, amountToMove.y, 0f);
+  //      middleBackground.position += new Vector3(amountToMove.x, amountToMove.y, 0f) * .8f;
 
-        lastPos = transform.position;
+    //    lastPos = transform.position;
 
     }
     
