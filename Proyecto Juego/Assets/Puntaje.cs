@@ -17,7 +17,7 @@ public class Puntaje : MonoBehaviour
 
     private void Update()
     {
-        puntos += Time.deltaTime;
+        //puntos += Time.deltaTime;
         textMesh.text = puntos.ToString("0");
     }
 
