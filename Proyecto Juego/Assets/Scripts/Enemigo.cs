@@ -6,10 +6,15 @@ public class Enemigo : MonoBehaviour
 {
   
     public float vida;
-
+    public float cantPuntos;
+    private Puntaje puntaje;
  //   [SerializeField] private GameObject efectoMuerte;
 
 
+    private void Start()
+    {
+        puntaje = GameObject.Find("Puntaje").GetComponent<Puntaje>();
+    }
 
     public void TomarDanio(float danio)
     {
@@ -23,6 +28,7 @@ public class Enemigo : MonoBehaviour
     private void Muerte()
     {
       //  Instantiate(efectoMuerte, transform.position, Quaternion.identity);
+        puntaje.SumarPuntos(cantPuntos);
         Destroy(gameObject);
     }
 

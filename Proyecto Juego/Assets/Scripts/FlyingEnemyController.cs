@@ -28,8 +28,8 @@ public class FlyingEnemyController : MonoBehaviour
     void Update()
     {
 
-        //if (Vector3.distance(transform.position, PlayerPosition.position) > distanceToAttackPlayer)
-        //{
+        if (Vector3.Distance(transform.position, PlayerPosition.position) > distanceToAttackPlayer)
+        {
             transform.position = Vector3.MoveTowards(transform.position, points[currentPoint].position, moveSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, points[currentPoint].position) < .05f)
@@ -49,11 +49,11 @@ public class FlyingEnemyController : MonoBehaviour
         {
             theSR.flipX = false;
         }
-        //}
-        //else
-        //{
-            //transform.position = Vector3.MoveTowards(transform.position, PlayerPosition.position, chaseSpeed * Time.deltaTime);
-        //}
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, PlayerPosition.position, chaseSpeed * Time.deltaTime);
+        }
         
             
     }
