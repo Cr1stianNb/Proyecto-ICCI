@@ -7,8 +7,6 @@ public class ControladorCamara : MonoBehaviour
 
     public Transform jugador;
 
-    public static ControladorCamara instance;
-
     public Transform farBackground, middleBackground;
 
     private Vector2 lastPos;
@@ -18,18 +16,12 @@ public class ControladorCamara : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else 
-        {
-            instance = this;
-        }
-
-        DontDestroyOnLoad(gameObject);
-
+        
         lastPos = transform.position;
+
+        jugador = GameObject.Find("Player").GetComponent<Transform>();
+        farBackground = GameObject.Find("Far").GetComponent<Transform>();
+        middleBackground = GameObject.Find("Middle").GetComponent<Transform>();
     }
 
     // Update is called once per frame
