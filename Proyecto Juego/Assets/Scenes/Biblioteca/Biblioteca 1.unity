@@ -310,11 +310,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0c90f016a4926b4093d76a3b644a035, type: 3}
---- !u!1 &190590545 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 848975329395144800, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-  m_PrefabInstance: {fileID: 699416233}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &536974999
 GameObject:
   m_ObjectHideFlags: 0
@@ -4324,14 +4319,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 848975329333744093, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 848975329333744093, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.177
-      objectReference: {fileID: 0}
     - target: {fileID: 848975329395144800, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4380,14 +4367,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 848975329395144807, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: radioSuelo
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 848975329395144807, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: whatIsGround.m_Bits
-      value: 2176
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
 --- !u!4 &699416234 stripped
@@ -4395,22 +4374,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 848975329395144805, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
   m_PrefabInstance: {fileID: 699416233}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &699416243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190590545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64401b754ba842042bb2e8a1b1414493, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 10
-  invincibleLength: 0
-  player: {fileID: 699416234}
 --- !u!1 &881223914
 GameObject:
   m_ObjectHideFlags: 0
