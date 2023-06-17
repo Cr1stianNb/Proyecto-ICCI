@@ -14,6 +14,8 @@ public class FlyingEnemyController : MonoBehaviour
 
     public float distanceToAttackPlayer, chaseSpeed;
 
+    private Vector3 attackTarget;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class FlyingEnemyController : MonoBehaviour
             points[i].parent = null;
         }
 
+        PlayerPosition = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -52,7 +55,13 @@ public class FlyingEnemyController : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, PlayerPosition.position, chaseSpeed * Time.deltaTime);
+            //atacando al jugador
+            if(attackTarget == Vector3.zero)
+            {
+                attackTarget = PlayerPosition.position;
+            }
+            
+            transform.position = Vector3.MoveTowards(transform.position, attackTarget, chaseSpeed * Time.deltaTime);
         }
         
             
