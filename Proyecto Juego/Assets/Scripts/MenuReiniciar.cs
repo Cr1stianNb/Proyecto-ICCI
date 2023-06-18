@@ -27,8 +27,7 @@ public class MenuReiniciar : MonoBehaviour
 
    public void Reiniciar()
    {
-    
-
+        Debug.Log("Reiniciar");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         controladorHealth.estaMuerto = false;
         controladorHealth.currentHealth = controladorHealth.maxHealth;
