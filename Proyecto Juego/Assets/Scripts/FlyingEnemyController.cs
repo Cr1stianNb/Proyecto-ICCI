@@ -14,6 +14,11 @@ public class FlyingEnemyController : MonoBehaviour
 
     public float distanceToAttackPlayer, chaseSpeed;
 
+    private Vector3 attackTarget;
+
+    public float waitAfterAttack;
+    private float attackCounter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,38 +27,65 @@ public class FlyingEnemyController : MonoBehaviour
             points[i].parent = null;
         }
 
+        PlayerPosition = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Vector3.Distance(transform.position, PlayerPosition.position) > distanceToAttackPlayer)
+        if(attackCounter > 0)
         {
-            transform.position = Vector3.MoveTowards(transform.position, points[currentPoint].position, moveSpeed * Time.deltaTime);
-
-        if (Vector3.Distance(transform.position, points[currentPoint].position) < .05f)
-        {
-            currentPoint++;
-
-            if (currentPoint >= points.Length)
-            {
-                currentPoint = 0;
-            }
-        }
-
-        if(transform.position.x < points[currentPoint].position.x)
-        {
-            theSR.flipX = true;
-        } else if(transform.position.x > points[currentPoint].position.x)
-        {
-            theSR.flipX = false;
-        }
+            attackCounter -= Time.deltaTime;
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, PlayerPosition.position, chaseSpeed * Time.deltaTime);
+            if (Vector3.Distance(transform.position, PlayerPosition.position) > distanceToAttackPlayer)
+            {
+
+                attackTarget = Vector3.zero;
+
+                transform.position = Vector3.MoveTowards(transform.position, points[currentPoint].position, moveSpeed * Time.deltaTime);
+
+                if (Vector3.Distance(transform.position, points[currentPoint].position) < .05f)
+                {
+                    currentPoint++;
+
+                    if (currentPoint >= points.Length)
+                    {
+                        currentPoint = 0;
+                    }
+                }
+
+                if (transform.position.x < points[currentPoint].position.x)
+                {
+                    theSR.flipX = true;
+                }
+                else if (transform.position.x > points[currentPoint].position.x)
+                {
+                    theSR.flipX = false;
+                }
+            }
+            else
+            {
+                //atacando al jugador
+                if (attackTarget == Vector3.zero)
+                {
+                    attackTarget = PlayerPosition.position;
+                }
+
+                transform.position = Vector3.MoveTowards(transform.position, attackTarget, chaseSpeed * Time.deltaTime);
+
+                if (Vector3.Distance(transform.position, attackTarget) <= .1f)
+                {
+                    attackCounter = waitAfterAttack;
+                    attackTarget = Vector3.zero;
+                }
+
+            }
         }
+
+
+        
         
             
     }
