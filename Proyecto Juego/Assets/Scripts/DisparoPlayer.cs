@@ -13,17 +13,29 @@ public class DisparoPlayer : MonoBehaviour
     private float angulo ;
     public GameObject bala;
 
+    public PlayerHealthController playerHealth;
+
+
+    void Start()
+    {
+        playerHealth = GetComponent<PlayerHealthController>();
+    }
+
+
     private void Update()
     {
         
-        if(Input.GetButtonDown("Fire1") && Input.GetKey(KeyCode.S))
-        {
-            DispararMedio();
-        }
-        else if(Input.GetButtonDown("Fire1"))
-        {
-           Disparar();
-        }
+       if(!playerHealth.estaMuerto)
+       {
+            if(Input.GetButtonDown("Fire1") && Input.GetKey(KeyCode.S))
+            {
+                DispararMedio();
+            }
+            else if(Input.GetButtonDown("Fire1"))
+            {
+            Disparar();
+            }
+       }
         
         /*
         if(Input.GetButtonDown("Fire1"))
