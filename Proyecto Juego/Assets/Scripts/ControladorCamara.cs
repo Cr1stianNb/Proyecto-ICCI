@@ -16,23 +16,7 @@ public class ControladorCamara : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
-        Debug.Log("prueba");
-        if(instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else 
-        {
-            instance = this;
-        }
-       
-        jugador = GameObject.Find("Player").GetComponent<Transform>();
-        DontDestroyOnLoad(gameObject);
 
-=======
-        
->>>>>>> f39834e85991c20eb910c8f20977d4ef46c92477
         lastPos = transform.position;
 
         jugador = GameObject.Find("Player").GetComponent<Transform>();
