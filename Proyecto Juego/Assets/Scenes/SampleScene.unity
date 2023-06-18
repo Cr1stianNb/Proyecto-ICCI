@@ -630,8 +630,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jugador: {fileID: 324915636}
-  farBackground: {fileID: 0}
-  middleBackground: {fileID: 0}
   alturaMin: -3
   alturaMax: 2.5
 --- !u!1 &609991507
@@ -1113,7 +1111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 100
-  cantPuntos: 0
 --- !u!1 &1388793768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,7 +1438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 848975329395144805, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.34
+      value: -2.86
       objectReference: {fileID: 0}
     - target: {fileID: 848975329395144805, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_LocalPosition.z
