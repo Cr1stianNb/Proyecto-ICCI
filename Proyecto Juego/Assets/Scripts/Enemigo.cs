@@ -33,13 +33,23 @@ public class Enemigo : MonoBehaviour
     }
 
 
+    /*
     void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.CompareTag("Player"))
         {
             
-            collider.GetComponent<PlayerHealthController>().DealDamage();            
+            collider.GetComponent<PlayerHealthController>().DealDamage(5, collider.GetContact(0).normal);            
              
+        }
+    }
+    */
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<PlayerHealthController>().DealDamage(5, other.GetContact(0).normal);
         }
     }
     

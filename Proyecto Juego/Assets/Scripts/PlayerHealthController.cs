@@ -6,6 +6,10 @@ using System;
 public class PlayerHealthController : MonoBehaviour
 {
 
+    private PlayerController playerController;
+
+    public float tiempoPerdidaJugador;
+
     public bool estaMuerto = false;
 
     public static PlayerHealthController instance;
@@ -36,6 +40,7 @@ public class PlayerHealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerController = GetComponent<PlayerController>();
         player = GetComponent<Transform>();
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
@@ -59,37 +64,84 @@ public class PlayerHealthController : MonoBehaviour
 
     public void DealDamage()
     {   
-        if(invincibleCounter <=0)
+    
+        currentHealth -= 1;
+        // PlayerControler.instance.anim.SetTrigger("Hurt");
+
+        if(currentHealth<=0 && !estaMuerto)
         {
-            currentHealth--;
-           // PlayerControler.instance.anim.SetTrigger("Hurt");
-
-
-             if(currentHealth<=0 && !estaMuerto)
-            {
         
-                rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
-                //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemigo"),true);
-                estaMuerto = true;
+            rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemigo"),true);
+            estaMuerto = true;
                 
-                animator.SetTrigger("Muerte");
+            animator.SetTrigger("Muerte");
                
 
 
 
-            }
-            else
-            {
-                //theSR.color = new Color(theSR.color.r, theSR.color.g, theSR.color.b, 0.5f);
-                //invincibleCounter = invincibleLength;
+        }
+        else
+        {
+            animator.SetTrigger("Daño");
+            //playerController.Rebote(posicion);
+            
 
-                //PlayerController.instance.knockBack();
-            }
-
-        // UIControler.instance.UpdateHealthDisplay();
+            
         }
 
+    // UIControler.instance.UpdateHealthDisplay();
     }
+
+
+    public void DealDamage(int daño, Vector2 posicion)
+    {   
+    
+        currentHealth -= daño;
+        // PlayerControler.instance.anim.SetTrigger("Hurt");
+
+        if(currentHealth<=0 && !estaMuerto)
+        {
+        
+            rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemigo"),true);
+            estaMuerto = true;
+                
+            animator.SetTrigger("Muerte");
+               
+
+
+
+        }
+        else
+        {
+            animator.SetTrigger("Daño");
+            StartCoroutine(PerderControl());
+            StartCoroutine(DesactivarColision());  
+            playerController.Rebote(posicion);
+            
+
+            
+        }
+
+    // UIControler.instance.UpdateHealthDisplay();
+    }
+
+    private IEnumerator PerderControl()
+    {
+        playerController.canMove = false;
+        yield return new  WaitForSeconds(tiempoPerdidaJugador);
+        playerController.canMove = true;
+    }
+
+
+    private IEnumerator DesactivarColision()
+    {
+        Physics2D.IgnoreLayerCollision(9,12,true);
+        yield return new WaitForSeconds(tiempoPerdidaJugador+0.5f);
+        Physics2D.IgnoreLayerCollision(9,12,false);
+    }
+
 
     public void MuerteJugadorEvento()
     {
