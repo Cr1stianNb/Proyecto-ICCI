@@ -6,7 +6,9 @@ using System;
 public class PlayerHealthController : MonoBehaviour
 {
 
-   public bool estaMuerto = false;
+    public bool estaMuerto = false;
+
+    public static PlayerHealthController instance;
 
     public int currentHealth, maxHealth;
 
@@ -26,7 +28,10 @@ public class PlayerHealthController : MonoBehaviour
 
     //private SpriteRenderer theSR;
 
-   
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
