@@ -270,6 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e9525cc033921e449a732583038894e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
+  vectorEmpuje: {x: 1.1, y: 2.9}
   moveSpeed: 2
   theRB: {fileID: 848975329395144803}
   jumpForce: 4
@@ -322,6 +324,7 @@ MonoBehaviour:
   controladorDisparo: {fileID: 848975329179908651}
   controladorDisparoHalf: {fileID: 848975327969291455}
   bala: {fileID: 200245020149596904, guid: c8c6dd3ad0c48ca46b6ea69de8b95901, type: 3}
+  playerHealth: {fileID: 0}
 --- !u!114 &1538131168978197426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +354,7 @@ MonoBehaviour:
   danioGolpe: 30
   tiempoEntreAtaque: 1
   tiempoSiguienteAtaque: 0
+  playerHealth: {fileID: 0}
 --- !u!114 &3994328690674403417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,10 +367,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64401b754ba842042bb2e8a1b1414493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tiempoPerdidaJugador: 0.7
+  estaMuerto: 0
   currentHealth: 0
-  maxHealth: 10
+  maxHealth: 1000
   invincibleLength: 0
   player: {fileID: 0}
+  animator: {fileID: 0}
+  rb2D: {fileID: 0}
 --- !u!1 &848975329781854820
 GameObject:
   m_ObjectHideFlags: 0
