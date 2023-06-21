@@ -698,5 +698,9 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9201893930701680790, guid: f0c90f016a4926b4093d76a3b644a035, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -503528183, guid: 45d247457ca6fe94eb3728e3ff552c2c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0c90f016a4926b4093d76a3b644a035, type: 3}
