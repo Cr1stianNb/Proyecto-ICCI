@@ -20,7 +20,7 @@ public class Damage : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            PlayerHealthController.instance.DealDamage();
+            PlayerHealthController.instance.DealDamage(1);
         }
     }
 }
