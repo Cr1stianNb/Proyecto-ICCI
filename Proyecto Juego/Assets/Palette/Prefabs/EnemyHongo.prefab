@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 9201893930231324407}
   - component: {fileID: 9201893930231324169}
   - component: {fileID: 565885277}
+  - component: {fileID: 2109077897}
   m_Layer: 0
   m_Name: EnemyHongo
   m_TagString: Enemigo
@@ -169,6 +170,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 50
+  cantPuntos: 0
+--- !u!114 &2109077897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201893930231324402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f231bf3f572c5c245980818bd10f1f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9201893930701680788
 GameObject:
   m_ObjectHideFlags: 0

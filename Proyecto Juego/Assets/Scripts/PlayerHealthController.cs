@@ -86,7 +86,7 @@ public class PlayerHealthController : MonoBehaviour
                 //PlayerController.instance.knockBack();
             }
 
-        // UIControler.instance.UpdateHealthDisplay();
+         UIVidaCanvas.instance.UpdateHealthDisplay();
         }
 
     }
@@ -94,6 +94,21 @@ public class PlayerHealthController : MonoBehaviour
     public void MuerteJugadorEvento()
     {
         MuerteJugador?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "platform")
+        {
+            transform.parent = other.transform;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "platform")
+        {
+            transform.parent = null;
+        }
     }
 }
 
