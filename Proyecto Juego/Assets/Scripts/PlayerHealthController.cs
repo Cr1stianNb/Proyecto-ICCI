@@ -92,7 +92,7 @@ public class PlayerHealthController : MonoBehaviour
                 //PlayerController.instance.knockBack();
             }
 
-        UIVidaCanvas.instance.UpdateHealthDisplay();
+        //UIVidaCanvas.instance.UpdateHealthDisplay();
 
             
 

@@ -9,6 +9,8 @@ public class FireBall : MonoBehaviour
 
     public float velocidad;
     public int danio;
+    public GameObject explosion;
+    public Transform  fireBall;
   
     void Update()
     {
@@ -23,6 +25,7 @@ public class FireBall : MonoBehaviour
         {
            other.GetComponent<PlayerHealthController>().DealDamage(danio);
            Destroy(gameObject);
+           Instantiate(explosion, fireBall.position, Quaternion.identity);
         }
         else 
         {
