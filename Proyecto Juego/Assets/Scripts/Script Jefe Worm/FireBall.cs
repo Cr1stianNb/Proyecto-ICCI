@@ -7,15 +7,22 @@ public class FireBall : MonoBehaviour
    
    
 
-    public float velocidad;
+    public float velocidad = 1f;
+    public float velocidadMax = 7;
+    public float velocidadImp =  0.1f;
     public int danio;
     public GameObject explosion;
     public Transform  fireBall;
   
     void Update()
     {
-
+        velocidad += velocidadImp;
         transform.Translate(Vector2.right * velocidad * Time.deltaTime);
+
+        if(velocidad >= velocidadMax)
+        {
+            velocidad = velocidadMax;
+        }
       
     }
 

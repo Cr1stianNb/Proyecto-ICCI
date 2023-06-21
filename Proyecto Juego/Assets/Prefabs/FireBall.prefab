@@ -138,6 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 3
+  velocidadMax: 9
+  velocidadImp: 0.3
   danio: 5
   explosion: {fileID: 7675452257426040015, guid: 692c0a0bfbceff0429c640dc84cb6249, type: 3}
   fireBall: {fileID: 6897041579759156846}
