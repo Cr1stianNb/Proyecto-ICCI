@@ -53,7 +53,7 @@ public class CombateMele : MonoBehaviour
         {
             if(colisionador.CompareTag("Enemigo"))
             {
-                colisionador.transform.GetComponent<Enemigo>().TomarDanio(danioGolpe);
+                colisionador.transform.GetComponent<Enemigo>().TomarDanio(danioGolpe, controladorGolpe);
             }
         }
     }
