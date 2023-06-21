@@ -87,11 +87,18 @@ public class PlayerHealthController : MonoBehaviour
             //playerController.Rebote(posicion);
             
 
+
+                //PlayerController.instance.knockBack();
+            }
+
+        UIVidaCanvas.instance.UpdateHealthDisplay();
+
             
+
         }
 
     // UIControler.instance.UpdateHealthDisplay();
-    }
+    
 
 
     public void DealDamage(int daño, Vector2 posicion)
@@ -146,6 +153,21 @@ public class PlayerHealthController : MonoBehaviour
     public void MuerteJugadorEvento()
     {
         MuerteJugador?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "platform")
+        {
+            transform.parent = other.transform;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "platform")
+        {
+            transform.parent = null;
+        }
     }
 }
 
