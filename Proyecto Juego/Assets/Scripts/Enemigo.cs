@@ -10,7 +10,7 @@ public class Enemigo : MonoBehaviour
     private Puntaje puntaje;
     public float empujeX;
     private Rigidbody2D theRB;
-    
+    private Animator animator;
     public KnockBack knockBack;
  //   [SerializeField] private GameObject efectoMuerte;
 
@@ -20,6 +20,7 @@ public class Enemigo : MonoBehaviour
         puntaje = GameObject.Find("Puntaje").GetComponent<Puntaje>();
         theRB = GetComponent<Rigidbody2D>();
         knockBack = GetComponent<KnockBack>();
+        animator = GetComponent<Animator>();
     }
 
     public void TomarDanio(float danio)
@@ -28,6 +29,10 @@ public class Enemigo : MonoBehaviour
         if(vida <=0)
         {
             Muerte();
+        }
+        else 
+        {
+            animator.SetTrigger("Golpe");
         }
     }
 
@@ -40,7 +45,8 @@ public class Enemigo : MonoBehaviour
         }
         else 
         {
-           knockBack.knockBack(player);
+            animator.SetTrigger("Golpe");
+            knockBack.knockBack(player);
         }
     }
 
@@ -73,18 +79,6 @@ public class Enemigo : MonoBehaviour
     }
 
 
-    public void Rebote(Vector3 puntoGolpe)
-    {
-        Vector3 puntoGolpe1 = new Vector3();
-        if(puntoGolpe.x >= 0)
-        {
-            puntoGolpe1 = Vector3.right;
-        }
-        else 
-        {
-            puntoGolpe1 = Vector3.left;
-        }
-        theRB.velocity = new Vector2(empujeX * puntoGolpe1.x , 0f); 
-    }
+   
     
 }
