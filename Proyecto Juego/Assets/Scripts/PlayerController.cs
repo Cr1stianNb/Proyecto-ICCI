@@ -5,6 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+
+    [Header("Componentes daño")]
+
+    public bool canMove = true;
+    [SerializeField] private Vector2 vectorEmpuje; 
+
     public float moveSpeed;
     private float horizontal;
     public Rigidbody2D theRB;
@@ -86,7 +92,6 @@ public class PlayerController : MonoBehaviour
        
         if(isGrounded)
             {
-                
                 contadorCoyoteTime = coyoteTime ;
 
                 if(isDoubleJump)
@@ -204,13 +209,13 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if(!isWallJumping )
+        if(!isWallJumping && canMove)
         {
             theRB.velocity = new Vector2(moveSpeed * horizontal , theRB.velocity.y);
 
         }
 
-        if(inputBuffer.Count > 0)
+        if(inputBuffer.Count > 0 && canMove)
         {
             #region salto
                 if(inputBuffer.Peek() == KeyCode.Space && !isWallSliding)
@@ -307,10 +312,6 @@ public class PlayerController : MonoBehaviour
 
     private void wallJump()
     {
-
-       
-
-
         if(isWallSliding)
         {
            isWallJumping = false;
@@ -376,56 +377,11 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundedCheckpoint.position, radioSuelo);
     }
+
+    public void Rebote(Vector2 puntoGolpe)
+    {
+        theRB.velocity = new Vector2(-vectorEmpuje.x * puntoGolpe.x , vectorEmpuje.y); 
+    }
 }
 
- /*
-        if(raycastSuelo == true)
-        {
-            tiempoEnElAire = 0;
-            cantSalto = 0;
-        }
-        else
-        {
-            tiempoEnElAire += Time.deltaTime;
-        }
-
-        if(Input.GetButtonDown("Jump"))
-        {
-            if(raycastSuelo == true)
-            {
-                theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-                cantSalto = cantSalto + 1 ;
-            }
-            else
-            {
-                if(tiempoEnElAire < 0.25f  && cantSalto < 1)
-                {
-                    theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-                    cantSalto = cantSalto + 1;
-                }
-            }
-
-        }
-
-         if(theRB.velocity.x < 0f && !isFlip)
-        {
-            theSR.flipX = true;
-           
-            return true;
-
-        }
-        else if(theRB.velocity.x > 0f && isFlip)
-        {
-            theSR.flipX = false;
-            
-            return false;
-        }
-        if(isFlip)
-        {
-            return true;
-        }
-        else 
-        {
-            return false;
-        }
-        */
+ 
