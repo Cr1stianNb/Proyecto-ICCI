@@ -7,7 +7,10 @@ public class JefeCaminar : StateMachineBehaviour
 
     private JefeWorm jefe;
     private Rigidbody2D theRB;
-    public float velocidadMovimiento;
+    private float velocidadLenta = 4f;
+    private float velocidadRapida = 1f;
+    private float velocidadMovimiento;
+
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -16,6 +19,15 @@ public class JefeCaminar : StateMachineBehaviour
        theRB = jefe.theRB;
 
        jefe.MirarJugador();
+
+       if(Random.Range(0,2) == 1)
+       {
+         velocidadMovimiento = velocidadLenta;
+       }
+       else 
+       {
+         velocidadMovimiento = velocidadRapida;
+       }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
