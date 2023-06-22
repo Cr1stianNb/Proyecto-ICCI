@@ -35020,6 +35020,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 138279423, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2540287445520444361, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -38593,6 +38597,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 100
   cantPuntos: 0
+  empujeX: 0
+  knockBack: {fileID: 0}
+  canHit: 1
 --- !u!61 &1634718409
 BoxCollider2D:
   m_ObjectHideFlags: 0
