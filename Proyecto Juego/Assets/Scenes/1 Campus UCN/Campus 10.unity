@@ -9674,6 +9674,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 848975329395144807, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
+      propertyPath: jumpForce
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
 --- !u!4 &955888019 stripped
@@ -9981,9 +9985,11 @@ GameObject:
   - component: {fileID: 1671865255}
   - component: {fileID: 1671865257}
   - component: {fileID: 1671865258}
-  m_Layer: 13
+  - component: {fileID: 1671865260}
+  - component: {fileID: 1671865259}
+  m_Layer: 12
   m_Name: Boss
-  m_TagString: Boss
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10017,7 +10023,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671865250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.187, y: -0.3, z: 0.1360142}
+  m_LocalPosition: {x: 0.215, y: -0.378, z: 0.1360142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10143,7 +10149,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1960784, y: 1}
+    oldSize: {x: 1.0166667, y: 0.85}
     newSize: {x: 1, y: 0.8039216}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -10151,20 +10157,58 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.39311683, y: -0.11663416}
+    - - {x: 0.3304392, y: -0.11003655}
       - {x: 0.31900162, y: -0.014755115}
-      - {x: 0.23849154, y: 0.12249982}
+      - {x: 0.21588218, y: 0.06371552}
       - {x: 0.04225433, y: 0.024195999}
       - {x: -0.04720553, y: -0.017204225}
       - {x: -0.079655945, y: -0.08876451}
       - {x: -0.10336824, y: -0.32000706}
       - {x: -0.21898954, y: -0.37606394}
-      - {x: -0.40664738, y: -0.3325321}
-      - {x: -0.57182485, y: -0.42614937}
-      - {x: -0.5980392, y: -0.5}
-      - {x: 0.34313726, y: -0.5}
-      - {x: 0.32550222, y: -0.40862024}
+      - {x: -0.29029214, y: -0.27920258}
+      - {x: -0.43122888, y: -0.37524396}
+      - {x: -0.39199334, y: -0.3812208}
+      - {x: 0.27526337, y: -0.4224298}
+      - {x: 0.27459678, y: -0.40134805}
       - {x: 0.29699755, y: -0.2168579}
+--- !u!114 &1671865259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671865250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1f7818c41da27f4aa0fdb3b173b0576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theRB: {fileID: 1671865255}
+  strength: 1
+  delay: 1
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDone:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1671865260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671865250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03fe8c96aa71284f8992e6661241a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 100
+  cantPuntos: 200
+  empujeX: 1
+  knockBack: {fileID: 0}
+  canHit: 1
 --- !u!1 &1922286528
 GameObject:
   m_ObjectHideFlags: 0

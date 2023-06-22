@@ -12,9 +12,10 @@ public class JefeWorm : MonoBehaviour
 
     private bool mirandoDerecha = true;
 
+    private static bool canHit;
+
     // VIDA
 
-    private float vida;
     
 
     private void Start()
@@ -24,15 +25,6 @@ public class JefeWorm : MonoBehaviour
         jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    public void TomarDanio(float danio)
-    {
-        vida -= danio;
-
-        if( vida <= 0)
-        {
-            animator.SetTrigger("Muerte");
-        }
-    }
 
     private void Muerte()
     {

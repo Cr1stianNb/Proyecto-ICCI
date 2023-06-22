@@ -9,7 +9,7 @@ public class Limites : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Boss"))
+        if(other.CompareTag("Enemigo"))
         {
            if(isRandom)
            {
