@@ -20,6 +20,10 @@ public class JefeHit : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
        animator.GetComponent<Enemigo>().DoInmortal();
+       if(animator.GetComponent<JefeWorm>().mitadVida >= animator.GetComponent<Enemigo>().vida)
+       {
+            animator.SetBool("MitadVida", true);
+       }
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

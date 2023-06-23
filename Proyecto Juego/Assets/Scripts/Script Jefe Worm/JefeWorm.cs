@@ -14,12 +14,15 @@ public class JefeWorm : MonoBehaviour
 
     private static bool canHit;
 
+    public float mitadVida;
+
     // VIDA
 
     
 
     private void Start()
     {
+        mitadVida = GetComponent<Enemigo>().vida / 2f;
         animator = GetComponent<Animator>();
         theRB = GetComponent<Rigidbody2D>();
         jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();

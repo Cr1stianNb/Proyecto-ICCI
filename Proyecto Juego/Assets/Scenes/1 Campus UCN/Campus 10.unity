@@ -10132,6 +10132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theRB: {fileID: 1671865255}
   jugador: {fileID: 955888019}
+  mitadVida: 0
 --- !u!60 &1671865258
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10184,8 +10185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 1671865255}
-  strength: 1
-  delay: 1
+  strength: 0
+  delay: 0
   OnBegin:
     m_PersistentCalls:
       m_Calls: []
