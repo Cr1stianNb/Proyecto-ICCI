@@ -62,10 +62,10 @@ public class PlayerHealthController : MonoBehaviour
         }
     }*/
 
-    public void DealDamage()
+    public void DealDamage(int daño)
     {   
     
-        currentHealth -= 1;
+        currentHealth -= daño;
         // PlayerControler.instance.anim.SetTrigger("Hurt");
 
         if(currentHealth<=0 && !estaMuerto)
@@ -84,6 +84,7 @@ public class PlayerHealthController : MonoBehaviour
         else
         {
             animator.SetTrigger("Daño");
+
             //playerController.Rebote(posicion);
             
 
@@ -91,7 +92,7 @@ public class PlayerHealthController : MonoBehaviour
                 //PlayerController.instance.knockBack();
             }
 
-        UIVidaCanvas.instance.UpdateHealthDisplay();
+        //UIVidaCanvas.instance.UpdateHealthDisplay();
 
             
 
@@ -105,15 +106,13 @@ public class PlayerHealthController : MonoBehaviour
     {   
     
         currentHealth -= daño;
-        // PlayerControler.instance.anim.SetTrigger("Hurt");
 
         if(currentHealth<=0 && !estaMuerto)
         {
         
             rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
             //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemigo"),true);
-            estaMuerto = true;
-                
+            estaMuerto = true;  
             animator.SetTrigger("Muerte");
                
 

@@ -12,6 +12,8 @@ public class DisparoPlayer : MonoBehaviour
    // public Transform controladorPunter;
     private float angulo ;
     public GameObject bala;
+    public float coolDown;
+    public float timeBetweenShot = 0.7f;
 
     public PlayerHealthController playerHealth;
 
@@ -25,16 +27,24 @@ public class DisparoPlayer : MonoBehaviour
     private void Update()
     {
         
-       if(!playerHealth.estaMuerto)
+       if(!playerHealth.estaMuerto && coolDown < 0f)
        {
             if(Input.GetButtonDown("Fire1") && Input.GetKey(KeyCode.S))
             {
                 DispararMedio();
+                coolDown = timeBetweenShot;
             }
             else if(Input.GetButtonDown("Fire1"))
             {
             Disparar();
+                coolDown = timeBetweenShot;
             }
+
+            
+       }
+       else 
+       {
+        coolDown -= Time.deltaTime;
        }
         
         /*

@@ -38,7 +38,7 @@ public class CombateMele : MonoBehaviour
         }
         if(Input.GetButtonDown("Fire2") && tiempoSiguienteAtaque <=0 && !playerHealth.estaMuerto)
         {
-            Golpe();
+            animator.SetTrigger("Golpe");
             tiempoSiguienteAtaque = tiempoEntreAtaque;
         }
     }
@@ -46,7 +46,7 @@ public class CombateMele : MonoBehaviour
     private void Golpe()
     {
 
-        animator.SetTrigger("Golpe");
+        //animator.SetTrigger("Golpe");
         Collider2D[] objetos = Physics2D.OverlapCircleAll(controladorGolpe.position, radioGolpe);
         Debug.Log("Ataca");
         foreach(Collider2D colisionador in objetos)

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98383079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.084, y: -0.04, z: 0}
+  m_LocalPosition: {x: 0.22, y: 0.002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -207,8 +207,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 327874873
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -598760196, guid: 3c879b771644ddf4d98d19af6e50318a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -324,6 +324,8 @@ MonoBehaviour:
   controladorDisparo: {fileID: 848975329179908651}
   controladorDisparoHalf: {fileID: 848975327969291455}
   bala: {fileID: 200245020149596904, guid: c8c6dd3ad0c48ca46b6ea69de8b95901, type: 3}
+  coolDown: 0
+  timeBetweenShot: 0.5
   playerHealth: {fileID: 0}
 --- !u!114 &1538131168978197426
 MonoBehaviour:
@@ -350,8 +352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controladorGolpe: {fileID: 98383080}
-  radioGolpe: 0.17
-  danioGolpe: 30
+  radioGolpe: 0.25
+  danioGolpe: 10
   tiempoEntreAtaque: 1
   tiempoSiguienteAtaque: 0
   playerHealth: {fileID: 0}
@@ -367,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64401b754ba842042bb2e8a1b1414493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoPerdidaJugador: 0.7
+  tiempoPerdidaJugador: 0.4
   estaMuerto: 0
   currentHealth: 0
   maxHealth: 1000

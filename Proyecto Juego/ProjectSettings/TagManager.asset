@@ -7,6 +7,7 @@ TagManager:
   - Enemigo
   - platform
   - Checkpoint
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - 
   - Platform
   - Enemigo
-  - 
+  - Boss
   - 
   - 
   - 
@@ -49,4 +50,7 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 754416209
+    locked: 0
+  - name: Enemy
+    uniqueID: 1999948901
     locked: 0

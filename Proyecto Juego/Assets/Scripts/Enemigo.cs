@@ -7,17 +7,22 @@ public class Enemigo : MonoBehaviour
   
     public float vida;
     public float cantPuntos;
-    private Puntaje puntaje;
+   // private Puntaje puntaje;
     public float empujeX;
     private Rigidbody2D theRB;
     private Animator animator;
     public KnockBack knockBack;
+
+    public bool canHit = true;
+
+    
+
  //   [SerializeField] private GameObject efectoMuerte;
 
 
     private void Start()
     {
-        puntaje = GameObject.Find("Puntaje").GetComponent<Puntaje>();
+        //puntaje = GameObject.Find("Puntaje").GetComponent<Puntaje>();
         theRB = GetComponent<Rigidbody2D>();
         knockBack = GetComponent<KnockBack>();
         animator = GetComponent<Animator>();
@@ -25,12 +30,15 @@ public class Enemigo : MonoBehaviour
 
     public void TomarDanio(float danio)
     {
-        vida -= danio;
-        if(vida <=0)
+        if(canHit)
         {
-            Muerte();
+            vida -= danio;
         }
-        else 
+        if(vida <=0 && canHit)
+        {
+            animator.SetTrigger("Muerte");
+        }
+        else if(canHit)
         {
             animator.SetTrigger("Golpe");
         }
@@ -38,12 +46,15 @@ public class Enemigo : MonoBehaviour
 
     public void TomarDanio(float danio, Transform player)
     {
-        vida -= danio;
-        if(vida <=0)
+        if(canHit)
         {
-            Muerte();
+            vida -= danio;
         }
-        else 
+        if(vida <=0 && canHit)
+        {
+           animator.SetTrigger("Muerte");
+        }
+        else if(canHit)
         {
             animator.SetTrigger("Golpe");
             knockBack.knockBack(player);
@@ -53,7 +64,7 @@ public class Enemigo : MonoBehaviour
     private void Muerte()
     {
       //  Instantiate(efectoMuerte, transform.position, Quaternion.identity);
-        puntaje.SumarPuntos(cantPuntos);
+       // puntaje.SumarPuntos(cantPuntos);
         Destroy(gameObject);
     }
 
@@ -76,6 +87,19 @@ public class Enemigo : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerHealthController>().DealDamage(5, other.GetContact(0).normal);
         }
+    }
+
+    public void DoInmortal()
+    {
+        StartCoroutine(Inmortal());
+    }
+
+    private IEnumerator Inmortal()
+    {
+        canHit = false;
+        yield return new WaitForSeconds(3f);
+        canHit = true;
+
     }
 
 
