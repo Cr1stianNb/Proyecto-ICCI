@@ -13,7 +13,8 @@ public class Corazon : MonoBehaviour
     void Start()
     {
         theRB = GetComponent<Rigidbody2D>();
-        
+        theRB.Sleep();
+        Debug.Log(theRB.IsSleeping());
     }
 
     public void wakeRigidBody2D()

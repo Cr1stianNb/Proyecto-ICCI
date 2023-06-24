@@ -28,6 +28,8 @@ public class JefeWorm : MonoBehaviour
 
     public bool changeVisible = false;
 
+    public GameObject corazon;
+
     // VIDA
 
     
@@ -91,6 +93,7 @@ public class JefeWorm : MonoBehaviour
         
         yield return new WaitForSeconds(7f);
         Instantiate(diamante,  new Vector3(transform.position.x, transform.position.y - 0.23f, transform.position.z),  transform.rotation);
+        Instantiate(corazon, new Vector3(transform.position.x, transform.position.y + 0.23f, transform.position.z ), Quaternion.identity);
         Destroy(gameObject);
     }
     
