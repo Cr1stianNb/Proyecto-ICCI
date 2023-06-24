@@ -168,5 +168,10 @@ public class PlayerHealthController : MonoBehaviour
             transform.parent = null;
         }
     }
+
+    public void RecuperarSalud(int salud)
+    {
+        currentHealth += salud;
+    }
 }
 

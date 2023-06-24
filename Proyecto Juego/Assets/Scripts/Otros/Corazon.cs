@@ -7,6 +7,8 @@ public class Corazon : MonoBehaviour
     
 
     public Rigidbody2D theRB;
+    
+    public int vidaRecuperada = 1;
    
 
 
@@ -20,6 +22,16 @@ public class Corazon : MonoBehaviour
     public void wakeRigidBody2D()
     {
         theRB.WakeUp();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            Debug.Log("Entro");
+            other.GetComponent<PlayerHealthController>().RecuperarSalud(vidaRecuperada);
+            Destroy(gameObject);
+        }
     }
 
     
