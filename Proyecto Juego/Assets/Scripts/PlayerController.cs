@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         theSR = GetComponent<SpriteRenderer>();
         inputBuffer = new Queue<KeyCode>();
+        isDoubleJump = true;
     }
 
     // Update is called once per frame
