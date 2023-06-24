@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4df2ac7a148adbd41b022aff6e8e5eb4
+guid: 6fe9445f9133eb14dbea9b65472383b8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -103,7 +103,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SLIME PLATFORMER_STRIP_HurtB_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 18
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3859c877a94214a47a87066cc232a4a5
+      internalID: 1702593674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLIME PLATFORMER_STRIP_HurtB_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 18
+        width: 38
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9993f89bfd08eaa45a8d18dd11f52215
+      internalID: 2124588954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +156,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SLIME PLATFORMER_STRIP_HurtB_0: 1702593674
+      SLIME PLATFORMER_STRIP_HurtB_1: 2124588954
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
