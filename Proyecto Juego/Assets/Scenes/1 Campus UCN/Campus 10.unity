@@ -9874,7 +9874,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 04aec256e8fe25e4a8226bde60622a2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9963,7 +9963,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626344744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.704, y: 0.021, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10069,8 +10069,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1999948901
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 340683581, guid: 11f374af975498a4592a52edb361381e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10133,6 +10133,11 @@ MonoBehaviour:
   theRB: {fileID: 1671865255}
   jugador: {fileID: 955888019}
   mitadVida: 0
+  particula: {fileID: 5125937260420517150, guid: 5d050a5b088cd7c41a243de8506842d7, type: 3}
+  diamante: {fileID: 4190857973378175459, guid: 37c7b68f6befe9f44a82219823361124, type: 3}
+  max: 1
+  timer: 10
+  changeVisible: 0
 --- !u!60 &1671865258
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10205,7 +10210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03fe8c96aa71284f8992e6661241a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 100
+  vida: 1
   cantPuntos: 200
   empujeX: 1
   knockBack: {fileID: 0}

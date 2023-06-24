@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a5bd96d41e9ad054ebf8e5adb3f972ad
+guid: e62b0ae652b14424babf9ef2a59bfb9b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 45
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shine_white_0
+      name: gem_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4be2ec38f535c9a4b82bd86359c26fe2
-      internalID: 726041137
+      spriteID: 1a1523096e19f3844a23cb46dc578060
+      internalID: 1353527458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shine_white_1
+      name: gem_1
       rect:
         serializedVersion: 2
         x: 16
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5203d40cbf8ed7d48af81e4d9f16adbc
-      internalID: -258408245
+      spriteID: e1c2259e3e84ae443889d3e4639b4658
+      internalID: -244903028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shine_white_2
+      name: gem_2
       rect:
         serializedVersion: 2
         x: 32
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ef3f99af758db249bcca894601d44ba
-      internalID: -1188327516
+      spriteID: d46fa53635dfabb4f93cac22b618843a
+      internalID: 1321615970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shine_white_3
+      name: gem_3
       rect:
         serializedVersion: 2
         x: 48
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffc27a1a549e1dd4ba2e878b6998fe85
-      internalID: 1909450247
+      spriteID: cb7c62fd3500c254d8f9c2c6699b1218
+      internalID: 704825424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shine_white_4
+      name: gem_4
       rect:
         serializedVersion: 2
         x: 64
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73bebea6e4717c14fb55004a17038a6b
-      internalID: -1835695593
+      spriteID: c7db859868c67b149887440a1ab9719c
+      internalID: -540983442
       vertices: []
       indices: 
       edges: []
@@ -220,11 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      shine_white_0: 726041137
-      shine_white_1: -258408245
-      shine_white_2: -1188327516
-      shine_white_3: 1909450247
-      shine_white_4: -1835695593
+      gem_0: 1353527458
+      gem_1: -244903028
+      gem_2: 1321615970
+      gem_3: 704825424
+      gem_4: -540983442
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

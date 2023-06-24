@@ -45,12 +45,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 327874873
-    locked: 0
   - name: Ground
     uniqueID: 754416209
     locked: 0
+  - name: Particles
+    uniqueID: 2439795289
+    locked: 0
+  - name: Decoracion
+    uniqueID: 1537438015
+    locked: 0
   - name: Enemy
     uniqueID: 1999948901
+    locked: 0
+  - name: Player
+    uniqueID: 327874873
+    locked: 0
+  - name: Particles2
+    uniqueID: 2691581971
     locked: 0
