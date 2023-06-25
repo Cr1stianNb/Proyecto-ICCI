@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 
 public class DisparoPlayer : MonoBehaviour
 {
@@ -16,7 +16,12 @@ public class DisparoPlayer : MonoBehaviour
     public float coolDown;
     public float timeBetweenShot = 0.7f;
 
+    public string proyectoFire;
     public PlayerHealthController playerHealth;
+    public KeyCode keycode;
+
+    
+    public static event EventHandler OnBeginShot;
 
 
     void Start()
@@ -30,14 +35,18 @@ public class DisparoPlayer : MonoBehaviour
         
        if(!playerHealth.estaMuerto && coolDown < 0f)
        {
-            if(Input.GetButtonDown("Fire1") && Input.GetKey(KeyCode.S))
+            if(Input.GetButtonDown(proyectoFire) && Input.GetKey(keycode))
             {
+                
                 DispararMedio();
+                DisparoPlayer.OnBeginShot?.Invoke(this, EventArgs.Empty);
                 coolDown = timeBetweenShot;
             }
-            else if(Input.GetButtonDown("Fire1"))
+            else if(Input.GetButtonDown(proyectoFire))
             {
+                
                 Disparar();
+                DisparoPlayer.OnBeginShot?.Invoke(this, EventArgs.Empty);
                 coolDown = timeBetweenShot;
             }
 
@@ -59,14 +68,18 @@ public class DisparoPlayer : MonoBehaviour
 
     }
 
+   
+
     private void Disparar()
     {
-        Instantiate(bala, controladorDisparo.position, controladorDisparo.rotation);
+        Instantiate(bala, controladorDisparo.position, controladorDisparo.rotation, transform);
+        
     }
 
     private void DispararMedio()
     {
-        Instantiate(bala, controladorDisparoHalf.position, controladorDisparoHalf.rotation);
+        Instantiate(bala, controladorDisparoHalf.position, controladorDisparoHalf.rotation, transform);
+       
     }
 
     /*
