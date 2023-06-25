@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DisparoPlayer : MonoBehaviour
 {
 
@@ -36,7 +37,7 @@ public class DisparoPlayer : MonoBehaviour
             }
             else if(Input.GetButtonDown("Fire1"))
             {
-            Disparar();
+                Disparar();
                 coolDown = timeBetweenShot;
             }
 
