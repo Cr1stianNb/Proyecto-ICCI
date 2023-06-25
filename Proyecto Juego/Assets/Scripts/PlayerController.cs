@@ -69,6 +69,10 @@ public class PlayerController : MonoBehaviour
     private float fallMultiplier = 2.5f;
     private float lowJumpMultiplier = 2f;
 
+
+    public string proyectoHorizontal;
+    public string proyectoJump;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,7 +89,7 @@ public class PlayerController : MonoBehaviour
 
       //  RaycastHit2D raycastSuelo = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, whatIsGround);
         isGrounded = Physics2D.OverlapCircle(groundedCheckpoint.position, radioSuelo, whatIsGround);
-        horizontal = Input.GetAxisRaw("Horizontal");
+        horizontal = Input.GetAxisRaw(proyectoHorizontal);
 
        
 
@@ -111,16 +115,25 @@ public class PlayerController : MonoBehaviour
             }
 
 
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown(proyectoJump))
         {
-            inputBuffer.Enqueue(KeyCode.Space);
-            Invoke("quitarAccion", 0.1f);
+            if(proyectoJump == "Jump1")
+            {
+                inputBuffer.Enqueue(KeyCode.Space);
+                Invoke("quitarAccion", 0.1f);
+            }
+            else if(proyectoJump == "Jump2")
+            {
+                inputBuffer.Enqueue(KeyCode.DownArrow);
+                Invoke("quitarAccion", 0.1f);
+            }
+            
            // Debug.Log(inputBuffer.Count);
         }
 
 
             
-        if(Input.GetButtonUp("Jump") && theRB.velocity.y > 0 && !isWallSliding )
+        if(Input.GetButtonUp(proyectoJump) && theRB.velocity.y > 0 && !isWallSliding )
         {
           //  theRB.velocity = new Vector2(theRB.velocity.x ,  theRB.velocity.y * 0.6f);
             contadorCoyoteTime = 0f;
@@ -200,7 +213,7 @@ public class PlayerController : MonoBehaviour
         {
             theRB.gravityScale = fallMultiplier;
         }
-        else if( theRB.velocity.y > 0 && !Input.GetButton("Jump") && !isWallJumping)
+        else if( theRB.velocity.y > 0 && !Input.GetButton(proyectoJump) && !isWallJumping)
         {
             theRB.gravityScale = lowJumpMultiplier;
         }
@@ -219,7 +232,7 @@ public class PlayerController : MonoBehaviour
         if(inputBuffer.Count > 0 && canMove)
         {
             #region salto
-                if(inputBuffer.Peek() == KeyCode.Space && !isWallSliding)
+                if(inputBuffer.Peek() == KeyCode.Space || inputBuffer.Peek() == KeyCode.DownArrow && !isWallSliding)
                     {
                     contadorPotenciadorSalto = potenciadorTiempoSalto;
                     if(contadorCoyoteTime > 0f && contadorPotenciadorSalto > 0f)
