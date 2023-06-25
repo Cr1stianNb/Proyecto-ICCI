@@ -123,6 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &364276393
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,6 +282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ff31c9cf1537847803da555d68cdf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> 9a8cc9733dcb5568f211c02051eaa74eb8be197d
 --- !u!1 &433969067
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +943,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+=======
+--- !u!1 &1618640631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 848975329395144800, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
+  m_PrefabInstance: {fileID: 706308155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1618640635 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 848975329395144808, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
+  m_PrefabInstance: {fileID: 706308155}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618640631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b51b3a8b2035c94b99849f922ccf3ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> 9a8cc9733dcb5568f211c02051eaa74eb8be197d
 --- !u!1001 &1803438037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -947,6 +969,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
+=======
+    - target: {fileID: 1753703579, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1618640631}
+    - target: {fileID: 1753703579, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: OnMenu.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618640635}
+    - target: {fileID: 1753703579, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: ExitMenu.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618640635}
+>>>>>>> 9a8cc9733dcb5568f211c02051eaa74eb8be197d
     - target: {fileID: 2540287445520444361, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1035,6 +1072,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 2540287446750214925, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -1059,6 +1097,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+=======
+>>>>>>> 9a8cc9733dcb5568f211c02051eaa74eb8be197d
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
 --- !u!1001 &1898359904
