@@ -8,11 +8,14 @@ public class KnockBack : MonoBehaviour
     
     
     [SerializeField] private Rigidbody2D theRB;
-    [SerializeField] private float strength = 26f, delay = 1f;
+    [SerializeField] private float strength, delay;
     
     public UnityEvent OnBegin, OnDone;
 
-
+    private void Start()
+    {
+        theRB = GetComponent<Rigidbody2D>();
+    }
 
 
     public void knockBack( Transform sender)

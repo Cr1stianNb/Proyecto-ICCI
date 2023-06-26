@@ -8,7 +8,7 @@ public class JefeWorm : MonoBehaviour
 
     public Rigidbody2D theRB;
 
-    public Transform jugador;
+    public GameObject[] jugadores;
 
     private bool mirandoDerecha = true;
 
@@ -40,7 +40,7 @@ public class JefeWorm : MonoBehaviour
         theSR = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         theRB = GetComponent<Rigidbody2D>();
-        jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        jugadores = GameObject.FindGameObjectsWithTag("Player");
     }
 
 
@@ -76,7 +76,19 @@ public class JefeWorm : MonoBehaviour
 
     public void MirarJugador()
     {
-        if((jugador.position.x > transform.position.x && !mirandoDerecha) || (jugador.position.x < transform.position.x && mirandoDerecha))
+       
+        int indexMenor = 0;
+
+        if( Vector3.Distance(transform.position, jugadores[0].transform.position) <= Vector3.Distance(transform.position, jugadores[1].transform.position))
+        {
+            indexMenor = 0;
+        }
+        else 
+        {
+            indexMenor = 1;
+        }
+
+        if((jugadores[indexMenor].transform.position.x > transform.position.x && !mirandoDerecha) || (jugadores[indexMenor].transform.position.x < transform.position.x && mirandoDerecha))
         {
             mirandoDerecha = !mirandoDerecha;
             transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);

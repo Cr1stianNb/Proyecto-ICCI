@@ -30,6 +30,8 @@ public class PlayerHealthController : MonoBehaviour
 
     public event EventHandler MuerteJugador;
 
+    public KnockBack knockBack;
+
     //private SpriteRenderer theSR;
 
     private void Awake()
@@ -45,6 +47,7 @@ public class PlayerHealthController : MonoBehaviour
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
+        knockBack = GetComponent<KnockBack>();
        // theSR = GetComponent<SpriteRenderer>();
     }
 
@@ -102,7 +105,7 @@ public class PlayerHealthController : MonoBehaviour
     
 
 
-    public void DealDamage(int daño, Vector2 posicion)
+    public void DealDamage(int daño, Transform posicion)
     {   
     
         currentHealth -= daño;
@@ -122,9 +125,10 @@ public class PlayerHealthController : MonoBehaviour
         else
         {
             animator.SetTrigger("Daño");
-            StartCoroutine(PerderControl());
+            knockBack.knockBack(posicion);
+            //StartCoroutine(PerderControl());
             StartCoroutine(DesactivarColision());  
-            playerController.Rebote(posicion);
+            //playerController.Rebote(posicion);
             
 
             
