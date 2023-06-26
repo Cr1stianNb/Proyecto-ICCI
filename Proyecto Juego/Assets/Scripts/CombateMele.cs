@@ -60,7 +60,7 @@ public class CombateMele : MonoBehaviour
             }
             else if(colisionador.CompareTag("Player") && colisionador.gameObject != gameObject)
             {
-                colisionador.transform.GetComponent<PlayerHealthController>().DealDamage((int)danioGolpe, controladorGolpe.position);
+                colisionador.transform.GetComponent<PlayerHealthController>().DealDamage((int)danioGolpe, controladorGolpe);
             }
         }
     }

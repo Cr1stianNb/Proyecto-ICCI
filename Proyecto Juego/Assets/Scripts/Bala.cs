@@ -16,12 +16,14 @@ public class Bala : MonoBehaviour
 
     private void Start()
     {
-        owner = GetComponentInParent<Transform>(); 
+        owner = transform.parent; 
     }
 
     void Update()
     {
+        
         transform.Translate(Vector2.right * velocidad * Time.deltaTime); 
+        transform.parent = null;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -31,7 +33,7 @@ public class Bala : MonoBehaviour
            other.GetComponent<Enemigo>().TomarDanio(danio);
            Destroy(gameObject);
         }
-        else if(other.CompareTag("Player") && other.gameObject.transform != owner)
+        else if(other.CompareTag("Player") && other.gameObject.transform != owner.transform)
         {
             other.GetComponent<PlayerHealthController>().DealDamage((int)danio);
         }
