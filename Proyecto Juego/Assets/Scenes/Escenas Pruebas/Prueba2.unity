@@ -473,34 +473,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6332156690991164902, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
-      propertyPath: keycode
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 6332156690991164902, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
-      propertyPath: proyectoFire
-      value: Fire1 Player 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6332156690991164902, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
-      propertyPath: OnStartShot.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6332156690991164902, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
-      propertyPath: OnStartShot.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6332156690991164902, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
-      propertyPath: OnStartShot.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 200245020149596904, guid: c8c6dd3ad0c48ca46b6ea69de8b95901, type: 3}
-    - target: {fileID: 6332156690991164902, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
-      propertyPath: OnStartShot.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6332156690991164905, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
-      propertyPath: proyectoJump
-      value: Jump2
-      objectReference: {fileID: 0}
     - target: {fileID: 6332156690991164907, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -549,10 +521,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (2) Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 6640694429428856943, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
-      propertyPath: proyectoFire2
-      value: Fire2 Player 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
 --- !u!1001 &1467411732
@@ -562,10 +530,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 655060449, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: proyectoFire2
-      value: Fire2 Player 1
-      objectReference: {fileID: 0}
     - target: {fileID: 848975329395144800, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -613,22 +577,6 @@ PrefabInstance:
     - target: {fileID: 848975329395144805, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 848975329395144807, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: proyectoJump
-      value: Jump1
-      objectReference: {fileID: 0}
-    - target: {fileID: 848975329395144807, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: proyectoHorizontal
-      value: Horizontal1
-      objectReference: {fileID: 0}
-    - target: {fileID: 848975329395144808, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: keycode
-      value: 102
-      objectReference: {fileID: 0}
-    - target: {fileID: 848975329395144808, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: proyectoFire
-      value: Fire1 Player 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}

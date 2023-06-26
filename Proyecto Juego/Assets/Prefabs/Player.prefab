@@ -208,7 +208,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 327874873
-  m_SortingLayer: 1
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -598760196, guid: 3c879b771644ddf4d98d19af6e50318a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -288,6 +288,8 @@ MonoBehaviour:
   canDoubleJump: 0
   controladorDisparo: {fileID: 848975329179908651}
   cantSalto: 0
+  proyectoHorizontal: Horizontal1
+  proyectoJump: Jump1
 --- !u!95 &848975329395144809
 Animator:
   serializedVersion: 5
@@ -326,7 +328,9 @@ MonoBehaviour:
   bala: {fileID: 200245020149596904, guid: c8c6dd3ad0c48ca46b6ea69de8b95901, type: 3}
   coolDown: 0
   timeBetweenShot: 0.5
+  proyectoFire: Fire1 Player 1
   playerHealth: {fileID: 0}
+  keycode: 102
 --- !u!114 &1538131168978197426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +361,7 @@ MonoBehaviour:
   tiempoEntreAtaque: 1
   tiempoSiguienteAtaque: 0
   playerHealth: {fileID: 0}
+  proyectoFire2: Fire2 Player 1
 --- !u!114 &3994328690674403417
 MonoBehaviour:
   m_ObjectHideFlags: 0
