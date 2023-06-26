@@ -17,6 +17,8 @@ public class CombateMele : MonoBehaviour
     private Animator animator;
     public PlayerHealthController playerHealth;
 
+    public string proyectoFire2;
+
 
 
 
@@ -36,8 +38,9 @@ public class CombateMele : MonoBehaviour
         {
             tiempoSiguienteAtaque -= Time.deltaTime;
         }
-        if(Input.GetButtonDown("Fire2") && tiempoSiguienteAtaque <=0 && !playerHealth.estaMuerto)
+        if(Input.GetButtonDown(proyectoFire2) && tiempoSiguienteAtaque <=0 && !playerHealth.estaMuerto)
         {
+            
             animator.SetTrigger("Golpe");
             tiempoSiguienteAtaque = tiempoEntreAtaque;
         }
@@ -48,12 +51,16 @@ public class CombateMele : MonoBehaviour
 
         //animator.SetTrigger("Golpe");
         Collider2D[] objetos = Physics2D.OverlapCircleAll(controladorGolpe.position, radioGolpe);
-        Debug.Log("Ataca");
+        
         foreach(Collider2D colisionador in objetos)
         {
             if(colisionador.CompareTag("Enemigo"))
             {
                 colisionador.transform.GetComponent<Enemigo>().TomarDanio(danioGolpe, controladorGolpe);
+            }
+            else if(colisionador.CompareTag("Player") && colisionador.gameObject != gameObject)
+            {
+                colisionador.transform.GetComponent<PlayerHealthController>().DealDamage((int)danioGolpe, controladorGolpe.position);
             }
         }
     }
