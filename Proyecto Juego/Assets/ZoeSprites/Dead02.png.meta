@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1c871aabcde4f344781134105740f741
+guid: c94632cd7c4be5d44b72634d5a40df6c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteCharacterMovement01-Sheet_0
+      name: Dead02_0
       rect:
         serializedVersion: 2
         x: 7
         y: 2
-        width: 34
-        height: 43
+        width: 26
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 975461c6784998f42b8db43ddb855df0
-      internalID: 587725013
+      spriteID: 339fe553ba736954793f0c328d858d29
+      internalID: -1451420153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteCharacterMovement01-Sheet_1
+      name: Dead02_1
       rect:
         serializedVersion: 2
-        x: 56
+        x: 57
         y: 2
-        width: 31
-        height: 43
+        width: 23
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,41 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42f75affce44e1b4bb9731d866ee16d1
-      internalID: -953858847
+      spriteID: 25015f32cc37aee419db0dec85e7b230
+      internalID: -285264661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteCharacterMovement01-Sheet_2
+      name: Dead02_2
       rect:
         serializedVersion: 2
-        x: 111
-        y: 1
-        width: 21
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 022762eb2ef81c444a933d5bdbe3b6f8
-      internalID: -2044928421
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteCharacterMovement01-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 153
+        x: 98
         y: 2
-        width: 29
-        height: 43
+        width: 42
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2235fb8b02d605a4f8569a8fb5929e55
-      internalID: 56507490
+      spriteID: 0343444795fcc1b4181374aa13692203
+      internalID: -1020342731
       vertices: []
       indices: 
       edges: []
@@ -199,10 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SpriteCharacterMovement01-Sheet_0: 587725013
-      SpriteCharacterMovement01-Sheet_1: -953858847
-      SpriteCharacterMovement01-Sheet_2: -2044928421
-      SpriteCharacterMovement01-Sheet_3: 56507490
+      Dead02_0: -1451420153
+      Dead02_1: -285264661
+      Dead02_2: -1020342731
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
