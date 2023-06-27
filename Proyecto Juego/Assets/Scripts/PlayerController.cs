@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     public bool isFlip=false;
 
-    static public bool isDoubleJump;
+    public static bool isDoubleJump;
     public bool canDoubleJump;
 
     private float tiempoEnElAire;
@@ -81,13 +81,14 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         theSR = GetComponent<SpriteRenderer>();
         inputBuffer = new Queue<KeyCode>();
-        isDoubleJump = true;
+        PlayerController.isDoubleJump = true;
     }
 
     private void IsGrounded()
     {
         float extraHeightText = .02f;
         RaycastHit2D raycastSuelo = Physics2D.Raycast(boxCollider2d.bounds.center, Vector2.down, boxCollider2d.bounds.extents.y + extraHeightText, whatIsGround);
+       // RaycastHit2D raycastSuelo = Physics2D.Raycast(boxCollider2d.bounds.center + boxCollider2d.bounds.center , Vector2.down, boxCollider2d.bounds.extents.y + extraHeightText, whatIsGround);
 
         if(raycastSuelo.collider != null)
         {
@@ -140,6 +141,7 @@ public class PlayerController : MonoBehaviour
             }
             else if(proyectoJump == "Jump2")
             {
+                Debug.Log(inputBuffer.Count);
                 inputBuffer.Enqueue(KeyCode.DownArrow);
                 Invoke("quitarAccion", 0.1f);
             }
@@ -248,7 +250,7 @@ public class PlayerController : MonoBehaviour
         if(inputBuffer.Count > 0 && canMove)
         {
             #region salto
-                if(inputBuffer.Peek() == KeyCode.Space || inputBuffer.Peek() == KeyCode.DownArrow && !isWallSliding)
+                if((inputBuffer.Peek() == KeyCode.Space || inputBuffer.Peek() == KeyCode.DownArrow) && !isWallSliding)
                     {
                     contadorPotenciadorSalto = potenciadorTiempoSalto;
                     if(contadorCoyoteTime > 0f && contadorPotenciadorSalto > 0f)
@@ -259,12 +261,13 @@ public class PlayerController : MonoBehaviour
                         
                         quitarAccion();
                         
+                        
                             
                     }else 
                     {
                         if(!isWallSliding && inputBuffer.Count > 0)
                         {
-                            if(canDoubleJump && inputBuffer.Peek() == KeyCode.Space && !isWallJumping )
+                            if(canDoubleJump && (inputBuffer.Peek() == KeyCode.Space  || inputBuffer.Peek() == KeyCode.DownArrow) && !isWallJumping )
                             {
                                 theRB.velocity = new Vector2( theRB.velocity.x , jumpForce);
                                // theRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
