@@ -27,21 +27,29 @@ PrefabInstance:
       propertyPath: proyectoFire2
       value: Fire2 Player 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1598303777, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.21
+      objectReference: {fileID: 0}
     - target: {fileID: 848975329395144800, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_Name
       value: Player (2) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 848975329395144802, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1653608038, guid: dd4f40a9ff50863478bc6cbd560980e4, type: 3}
     - target: {fileID: 848975329395144805, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 848975329395144805, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.5448837
+      value: -1.6385833
       objectReference: {fileID: 0}
     - target: {fileID: 848975329395144805, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.42887735
+      value: -0.6892422
       objectReference: {fileID: 0}
     - target: {fileID: 848975329395144805, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -75,6 +83,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 848975329395144806, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 848975329395144807, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: proyectoJump
       value: Jump2
@@ -91,6 +103,10 @@ PrefabInstance:
       propertyPath: proyectoFire
       value: Fire1 Player 2
       objectReference: {fileID: 0}
+    - target: {fileID: 848975329395144809, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: af5f8dd390ffcce41969ae12ae89f122, type: 2}
     - target: {fileID: 3994328690674403417, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: maxHealth
       value: 2

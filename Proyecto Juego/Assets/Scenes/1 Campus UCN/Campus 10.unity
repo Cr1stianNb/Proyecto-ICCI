@@ -9791,6 +9791,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6332156690991164904, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
+      propertyPath: m_Size.x
+      value: 0.12671638
+      objectReference: {fileID: 0}
+    - target: {fileID: 6332156690991164904, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.005679488
+      objectReference: {fileID: 0}
     - target: {fileID: 6332156690991164907, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -9835,6 +9843,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6332156690991164908, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1653608038, guid: dd4f40a9ff50863478bc6cbd560980e4, type: 3}
     - target: {fileID: 6332156690991164910, guid: 98f23fb2655d0f24fb161fc7adad18f7, type: 3}
       propertyPath: m_Name
       value: Player (2) Variant

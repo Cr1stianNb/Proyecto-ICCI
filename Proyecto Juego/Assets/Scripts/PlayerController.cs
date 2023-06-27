@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public bool canMove = true;
     [SerializeField] private Vector2 vectorEmpuje; 
-
+    [SerializeField] private BoxCollider2D boxCollider2d;
     public float moveSpeed;
     private float horizontal;
     public Rigidbody2D theRB;
@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        boxCollider2d = GetComponent<BoxCollider2D>();
         PlayerPrefs.SetString("LastExitName", "");
         anim = GetComponent<Animator>();
         theSR = GetComponent<SpriteRenderer>();
@@ -83,12 +84,27 @@ public class PlayerController : MonoBehaviour
         isDoubleJump = true;
     }
 
+    private void IsGrounded()
+    {
+        float extraHeightText = .02f;
+        RaycastHit2D raycastSuelo = Physics2D.Raycast(boxCollider2d.bounds.center, Vector2.down, boxCollider2d.bounds.extents.y + extraHeightText, whatIsGround);
+
+        if(raycastSuelo.collider != null)
+        {
+            isGrounded = true;
+        }
+        else 
+        {
+            isGrounded = false;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
 
-      //  RaycastHit2D raycastSuelo = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, whatIsGround);
-        isGrounded = Physics2D.OverlapCircle(groundedCheckpoint.position, radioSuelo, whatIsGround);
+        IsGrounded();
+       // isGrounded = Physics2D.OverlapCircle(groundedCheckpoint.position, radioSuelo, whatIsGround);
         horizontal = Input.GetAxisRaw(proyectoHorizontal);
 
        
@@ -389,8 +405,13 @@ public class PlayerController : MonoBehaviour
      private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
+        
+        Vector3 direction = new Vector3(0, -0.35f, 0);
         Gizmos.DrawWireSphere(groundedCheckpoint.position, radioSuelo);
+        Gizmos.DrawRay(transform.position, direction );
     }
+
+  
 
     public void Rebote(Vector2 puntoGolpe)
     {
