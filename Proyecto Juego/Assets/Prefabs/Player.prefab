@@ -378,12 +378,13 @@ MonoBehaviour:
   tiempoPerdidaJugador: 0.4
   estaMuerto: 0
   currentHealth: 0
-  maxHealth: 5
+  maxHealth: 2
   invincibleLength: 0
   player: {fileID: 0}
   animator: {fileID: 0}
   rb2D: {fileID: 0}
   knockBack: {fileID: 0}
+  menuReiniciar: {fileID: 0}
 --- !u!114 &931505523
 MonoBehaviour:
   m_ObjectHideFlags: 0
