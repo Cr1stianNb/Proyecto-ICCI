@@ -9602,10 +9602,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2451507929548591467, guid: 68f2438e1dfaac748b57770394d9c686, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 449fc0536b8cd264b9a648f9520b6e22, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68f2438e1dfaac748b57770394d9c686, type: 3}
 --- !u!1001 &522470692
@@ -9852,10 +9848,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 655060449, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 848975329395144800, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -9903,30 +9895,6 @@ PrefabInstance:
     - target: {fileID: 848975329395144805, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 848975329395144806, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 848975329395144807, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 848975329395144808, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 848975329395144809, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 848975329395144809, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3994328690674403417, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3994328690674403417, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: menuReiniciar
