@@ -28,9 +28,11 @@ public class PlayerHealthController : MonoBehaviour
 
     public Rigidbody2D rb2D;
 
-    public event EventHandler MuerteJugador;
+    public static event EventHandler MuerteJugador;
 
     public KnockBack knockBack;
+
+    public MenuReiniciar menuReiniciar;
 
     //private SpriteRenderer theSR;
 
@@ -76,10 +78,10 @@ public class PlayerHealthController : MonoBehaviour
         
             rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
             //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemigo"),true);
-            estaMuerto = true;
+    
                 
             animator.SetTrigger("Muerte");
-               
+            animator.SetBool("IsDead", true);
 
 
 
@@ -115,14 +117,15 @@ public class PlayerHealthController : MonoBehaviour
         
             rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
             //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"),LayerMask.NameToLayer("Enemigo"),true);
-            estaMuerto = true;  
+
+            animator.SetBool("IsDead", true);
             animator.SetTrigger("Muerte");
                
 
 
 
         }
-        else
+        else if(!estaMuerto)
         {
             animator.SetTrigger("Daño");
             knockBack.knockBack(posicion);
@@ -153,9 +156,9 @@ public class PlayerHealthController : MonoBehaviour
     }
 
 
-    public void MuerteJugadorEvento()
+    public  void MuerteJugadorEvento()
     {
-        MuerteJugador?.Invoke(this, EventArgs.Empty);
+        MuerteJugador?.Invoke(null, EventArgs.Empty);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -177,5 +180,17 @@ public class PlayerHealthController : MonoBehaviour
     {
         currentHealth += salud;
     }
+
+    public void RecuperarTodaLaSalud()
+    {
+        currentHealth = maxHealth;
+        animator.SetBool("IsDead", false);
+        rb2D.constraints = RigidbodyConstraints2D.None;
+        rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    
+
+
 }
 

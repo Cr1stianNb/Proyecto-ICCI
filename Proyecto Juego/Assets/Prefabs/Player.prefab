@@ -378,7 +378,7 @@ MonoBehaviour:
   tiempoPerdidaJugador: 0.4
   estaMuerto: 0
   currentHealth: 0
-  maxHealth: 1000
+  maxHealth: 5
   invincibleLength: 0
   player: {fileID: 0}
   animator: {fileID: 0}
