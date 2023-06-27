@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6731a42a9f2092d47a86846dbd77c15d
+guid: a1c7b35a0c0ecff4ab2b29176d6f514f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,43 +105,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jumo01_0
+      name: ZoeDamage_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 7
-        width: 28
-        height: 52
+        x: 7
+        y: 2
+        width: 26
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f3c8e7a1fddf464b8c46921aec231c9
-      internalID: 795020600
+      spriteID: f383774fd49305b4b821089c9054d19f
+      internalID: 1872579840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jumo01_1
+      name: ZoeDamage_1
       rect:
         serializedVersion: 2
-        x: 57
-        y: 7
-        width: 32
-        height: 52
+        x: 55
+        y: 2
+        width: 26
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ac906db4220fc14db47a1067f0167f0
-      internalID: 896186363
+      spriteID: 3b2f27dba48a90a46bb9c55efcf40029
+      internalID: 846890636
       vertices: []
       indices: 
       edges: []
@@ -157,8 +157,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Jumo01_0: 795020600
-      Jumo01_1: 896186363
+      ZoeDamage_0: 1872579840
+      ZoeDamage_1: 846890636
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
