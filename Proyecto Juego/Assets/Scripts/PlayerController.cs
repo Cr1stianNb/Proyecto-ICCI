@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
     // Gravity scale 
 
     private float fallMultiplier = 2.5f;
-    private float lowJumpMultiplier = 2f;
+    private float lowJumpMultiplier = 2.0f;
 
 
     public string proyectoHorizontal;
@@ -98,6 +98,8 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = false;
         }
+
+        anim.SetBool("IsGrounded", isGrounded);
     }
 
     // Update is called once per frame
@@ -217,8 +219,7 @@ public class PlayerController : MonoBehaviour
        
      
 
-        anim.SetFloat("velocidadMov", Mathf.Abs(theRB.velocity.x));
-
+       
         
            
         
@@ -227,8 +228,12 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
 
+        anim.SetFloat("velocidadMov", Mathf.Abs(theRB.velocity.x));
+        anim.SetFloat("velocidadY", theRB.velocity.y);
+
         if(theRB.velocity.y < 0)
         {
+            
             theRB.gravityScale = fallMultiplier;
         }
         else if( theRB.velocity.y > 0 && !Input.GetButton(proyectoJump) && !isWallJumping)
@@ -252,6 +257,7 @@ public class PlayerController : MonoBehaviour
             #region salto
                 if((inputBuffer.Peek() == KeyCode.Space || inputBuffer.Peek() == KeyCode.DownArrow) && !isWallSliding)
                     {
+                    //anim.SetTrigger("Jump");
                     contadorPotenciadorSalto = potenciadorTiempoSalto;
                     if(contadorCoyoteTime > 0f && contadorPotenciadorSalto > 0f)
                     {
@@ -269,6 +275,7 @@ public class PlayerController : MonoBehaviour
                         {
                             if(canDoubleJump && (inputBuffer.Peek() == KeyCode.Space  || inputBuffer.Peek() == KeyCode.DownArrow) && !isWallJumping )
                             {
+                                anim.SetTrigger("Jump");
                                 theRB.velocity = new Vector2( theRB.velocity.x , jumpForce);
                                // theRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                                 canDoubleJump = false;
