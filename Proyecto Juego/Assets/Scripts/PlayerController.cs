@@ -73,6 +73,9 @@ public class PlayerController : MonoBehaviour
     public string proyectoHorizontal;
     public string proyectoJump;
 
+
+    [SerializeField] private ParticleSystem dustParticle;
+
     // Start is called before the first frame update
     void Start()
     {

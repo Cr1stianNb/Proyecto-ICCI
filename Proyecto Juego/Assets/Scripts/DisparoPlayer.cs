@@ -35,14 +35,14 @@ public class DisparoPlayer : MonoBehaviour
         
        if(!playerHealth.estaMuerto && coolDown < 0f)
        {
-            if(Input.GetButtonDown(proyectoFire) && Input.GetKey(keycode))
+            if(Input.GetButtonDown(proyectoFire) && Input.GetKey(keycode) && !SistemaPausa.isPaused)
             {
                 
                 DispararMedio();
                 DisparoPlayer.OnBeginShot?.Invoke(this, EventArgs.Empty);
                 coolDown = timeBetweenShot;
             }
-            else if(Input.GetButtonDown(proyectoFire))
+            else if(Input.GetButtonDown(proyectoFire) && !SistemaPausa.isPaused)
             {
                 
                 Disparar();

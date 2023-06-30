@@ -293,6 +293,7 @@ MonoBehaviour:
   cantSalto: 0
   proyectoHorizontal: Horizontal1
   proyectoJump: Jump1
+  dustParticle: {fileID: 0}
 --- !u!95 &848975329395144809
 Animator:
   serializedVersion: 5

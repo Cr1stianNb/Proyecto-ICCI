@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class SistemaPausa : MonoBehaviour
 {
     public GameObject menuPausa;
-    private bool isPaused;
+    public static bool isPaused;
     public GameObject player;
     public UnityEvent OnMenu, ExitMenu;
 
@@ -41,7 +41,7 @@ public class SistemaPausa : MonoBehaviour
 
     public void SalirMenuPausa()
     {
-        ExitMenu?.Invoke();
+        StartCoroutine(Delay());
         isPaused = false;
         menuPausa.SetActive(false);
         Time.timeScale = 1;
@@ -54,5 +54,12 @@ public class SistemaPausa : MonoBehaviour
         SceneManager.LoadScene(0);
         
 
+    }
+
+    private IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(2f);
+        Debug.Log("Prueba");
+        ExitMenu?.Invoke();
     }
 }
