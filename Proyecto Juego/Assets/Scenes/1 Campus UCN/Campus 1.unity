@@ -356,6 +356,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 655060449, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 848975329395144800, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -403,6 +407,18 @@ PrefabInstance:
     - target: {fileID: 848975329395144805, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 848975329395144807, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 848975329395144808, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994328690674403417, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
@@ -4199,7 +4215,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 5
-      m_TileSpriteIndex: 5
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5110,12 +5126,12 @@ Tilemap:
     m_Data: {fileID: -1897868355, guid: 7e9276930faab6e4e8214eb3d4c7e68c, type: 3}
   - m_RefCount: 60
     m_Data: {fileID: 437351363, guid: 7e9276930faab6e4e8214eb3d4c7e68c, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1086099011, guid: 7e9276930faab6e4e8214eb3d4c7e68c, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 847712244, guid: 7e9276930faab6e4e8214eb3d4c7e68c, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 847712244, guid: 7e9276930faab6e4e8214eb3d4c7e68c, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1086099011, guid: 7e9276930faab6e4e8214eb3d4c7e68c, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -639351463, guid: 7e9276930faab6e4e8214eb3d4c7e68c, type: 3}
   - m_RefCount: 2
