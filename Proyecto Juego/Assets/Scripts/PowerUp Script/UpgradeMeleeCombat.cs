@@ -5,7 +5,13 @@ using UnityEngine;
 public class UpgradeMeleeCombat : MonoBehaviour
 {
   
-    //public Transform playerPosition;
+    public ParticleSystem rayParticle;
+
+
+    private void  Start()
+    {
+        Instantiate(rayParticle, transform.position, Quaternion.identity);
+    }
 
 
     private void OnTriggerEnter2D(Collider2D player)
@@ -14,7 +20,6 @@ public class UpgradeMeleeCombat : MonoBehaviour
         {
             Debug.Log("Upgrade triggered");
             CombateMele.canMeleCombat = true;
-            //Instanciate(upgradeEffect, playerPosition);
             Destroy(gameObject);
 
         }
