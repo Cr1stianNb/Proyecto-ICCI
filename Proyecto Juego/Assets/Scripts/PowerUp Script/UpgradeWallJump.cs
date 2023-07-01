@@ -5,7 +5,7 @@ using UnityEngine;
 public class UpgradeWallJump : MonoBehaviour
 {
     // public ParticleSystem upgradeEffect;
-    public Transform playerPosition;
+    // public Transform playerPosition;
 
 
     private void OnTriggerEnter2D(Collider2D player)

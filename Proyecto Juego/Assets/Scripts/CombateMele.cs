@@ -20,7 +20,7 @@ public class CombateMele : MonoBehaviour
     public string proyectoFire2;
 
 
-
+    public static bool canMeleCombat = false;
 
 
 
@@ -34,15 +34,20 @@ public class CombateMele : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(tiempoSiguienteAtaque > 0)
+        if(canMeleCombat)
         {
-            tiempoSiguienteAtaque -= Time.deltaTime;
-        }
-        if(Input.GetButtonDown(proyectoFire2) && tiempoSiguienteAtaque <=0 && !playerHealth.estaMuerto)
-        {
-            
-            animator.SetTrigger("Golpe");
-            tiempoSiguienteAtaque = tiempoEntreAtaque;
+
+        
+            if(tiempoSiguienteAtaque > 0)
+            {
+                tiempoSiguienteAtaque -= Time.deltaTime;
+            }
+            if(Input.GetButtonDown(proyectoFire2) && tiempoSiguienteAtaque <=0 && !playerHealth.estaMuerto)
+            {
+                
+                animator.SetTrigger("Golpe");
+                tiempoSiguienteAtaque = tiempoEntreAtaque;
+            }
         }
     }
 
