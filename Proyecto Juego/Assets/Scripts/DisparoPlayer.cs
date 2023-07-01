@@ -22,6 +22,7 @@ public class DisparoPlayer : MonoBehaviour
 
     
     public static event EventHandler OnBeginShot;
+    public static bool canShot = false;
 
 
     void Start()
@@ -32,30 +33,32 @@ public class DisparoPlayer : MonoBehaviour
 
     private void Update()
     {
-        
-       if(!playerHealth.estaMuerto && coolDown < 0f)
-       {
-            if(Input.GetButtonDown(proyectoFire) && Input.GetKey(keycode) && !SistemaPausa.isPaused)
+        if(canShot)
+        {
+            if(!playerHealth.estaMuerto && coolDown < 0f)
             {
-                
-                DispararMedio();
-                DisparoPlayer.OnBeginShot?.Invoke(this, EventArgs.Empty);
-                coolDown = timeBetweenShot;
-            }
-            else if(Input.GetButtonDown(proyectoFire) && !SistemaPausa.isPaused)
-            {
-                
-                Disparar();
-                DisparoPlayer.OnBeginShot?.Invoke(this, EventArgs.Empty);
-                coolDown = timeBetweenShot;
-            }
+                    if(Input.GetButtonDown(proyectoFire) && Input.GetKey(keycode) && !SistemaPausa.isPaused)
+                    {
+                        
+                        DispararMedio();
+                        DisparoPlayer.OnBeginShot?.Invoke(this, EventArgs.Empty);
+                        coolDown = timeBetweenShot;
+                    }
+                    else if(Input.GetButtonDown(proyectoFire) && !SistemaPausa.isPaused)
+                    {
+                        
+                        Disparar();
+                        DisparoPlayer.OnBeginShot?.Invoke(this, EventArgs.Empty);
+                        coolDown = timeBetweenShot;
+                    }
 
-            
-       }
-       else 
-       {
-        coolDown -= Time.deltaTime;
-       }
+                    
+            }
+            else 
+            {
+                coolDown -= Time.deltaTime;
+            }
+        }
         
         /*
         if(Input.GetButtonDown("Fire1"))
