@@ -22,7 +22,7 @@ public class DisparoPlayer : MonoBehaviour
 
     
     public static event EventHandler OnBeginShot;
-    public static bool canShot = false;
+    public static bool canShot = true;
 
 
     void Start()
