@@ -23,8 +23,8 @@ public class RunBehaviour : StateMachineBehaviour
     {
        if(tiempo < 0)
        {
-            dustParticle = Instantiate(dustParticlePrefab, animator.transform.Find("ControladorDust").position, Quaternion.identity);
-            tiempo = tiempoEspera;
+          dustParticle = Instantiate(dustParticlePrefab, animator.transform.Find("ControladorDust").position, Quaternion.identity);
+          tiempo = tiempoEspera;
        }
        else 
        {

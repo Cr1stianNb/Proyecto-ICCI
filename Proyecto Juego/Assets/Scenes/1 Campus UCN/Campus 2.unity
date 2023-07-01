@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 673988205}
   - component: {fileID: 673988204}
   - component: {fileID: 673988203}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7525,7 +7525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29283aae8496fa14c9a6f909cafbe8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LastExitName: Campus2Exit1
+  LastExitName: Campus1Exit1
 --- !u!4 &1702037037
 Transform:
   m_ObjectHideFlags: 0
