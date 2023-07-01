@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     private float tiempoEnElAire;
     
     private bool isWallSliding;
-    private float wallSlidingSpeed = 2f;
+    private float wallSlidingSpeed = 1f;
     
     private float coyoteTime = 0.2f;
     private float contadorCoyoteTime;
@@ -40,13 +40,13 @@ public class PlayerController : MonoBehaviour
     private float potenciadorTiempoSalto = 0.2f;
     private float contadorPotenciadorSalto;
 
-    static public bool canWallJump = false;
+    static public bool canWallJump = true;
     private bool isWallJumping;
     private float wallJumpingDirection;
     private float wallJumpingTime = 0.2f;
     private float wallJumpingCounter;
     private float wallJumpingDuration = 0.3f;
-    private Vector2 wallJumpingPower = new Vector2(6f, 8f);
+    private Vector2 wallJumpingPower = new Vector2( 2f, 4f);
     private bool isDoubleJumping;
    
 
@@ -66,13 +66,13 @@ public class PlayerController : MonoBehaviour
 
     // Gravity scale 
 
-    private float fallMultiplier = 2.5f;
-    private float lowJumpMultiplier = 2.0f;
+    private float fallMultiplier = 1f;
+    private float lowJumpMultiplier = 1.6f;
 
 
     public string proyectoHorizontal;
     public string proyectoJump;
-
+    private float extraHeightText = .2f;
 
     [SerializeField] private ParticleSystem dustParticle;
 
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
 
     private void IsGrounded()
     {
-        float extraHeightText = .02f;
+        
         RaycastHit2D raycastSuelo = Physics2D.Raycast(boxCollider2d.bounds.center, Vector2.down, boxCollider2d.bounds.extents.y + extraHeightText, whatIsGround);
        // RaycastHit2D raycastSuelo = Physics2D.Raycast(boxCollider2d.bounds.center + boxCollider2d.bounds.center , Vector2.down, boxCollider2d.bounds.extents.y + extraHeightText, whatIsGround);
 
@@ -239,13 +239,13 @@ public class PlayerController : MonoBehaviour
             
             theRB.gravityScale = fallMultiplier;
         }
-        else if( theRB.velocity.y > 0 && !Input.GetButton(proyectoJump) && !isWallJumping)
+        else if( theRB.velocity.y > 0 && !Input.GetButton(proyectoJump) )
         {
             theRB.gravityScale = lowJumpMultiplier;
         }
         else 
         {
-            theRB.gravityScale = 1f;
+            theRB.gravityScale = 0.85f;
         }
 
 
@@ -309,7 +309,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isWalled()
     {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.3f, wallLayer);
+        return Physics2D.OverlapCircle(wallCheck.position, 0.16f, wallLayer);
     }
 
     
@@ -375,11 +375,13 @@ public class PlayerController : MonoBehaviour
         }
             // Jump
         if(inputBuffer.Count > 0)
-        {
+        {       // Segundo jugador
             if( inputBuffer.Peek() == KeyCode.Space && wallJumpingCounter > 0f)
             {
                 isWallJumping = true;
                 theRB.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y); 
+                //Vector2 vector2 = new Vector2(wallJumpingDirection*wallJumpingPower.x, wallJumpingPower.y);
+                //theRB.AddForce(vector2, ForceMode2D.Impulse);
                 wallJumpingCounter = 0f;
              
                 if( wallJumpingDirection == 1 && isFlip)
@@ -419,9 +421,10 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         
-        Vector3 direction = new Vector3(0, -0.35f, 0);
-        Gizmos.DrawWireSphere(groundedCheckpoint.position, radioSuelo);
+        Vector3 direction = new Vector3(0, - (extraHeightText), 0);
+       // Gizmos.DrawWireSphere(groundedCheckpoint.position, radioSuelo);
         Gizmos.DrawRay(transform.position, direction );
+        Gizmos.DrawWireSphere(wallCheck.position, 0.12f);
     }
 
   
