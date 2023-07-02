@@ -17,7 +17,7 @@ public class FireBall : MonoBehaviour
     void Update()
     {
         velocidad += velocidadImp;
-        transform.Translate(Vector2.left * velocidad * Time.deltaTime);
+        transform.Translate(Vector2.right * velocidad * Time.deltaTime);
 
         if(velocidad >= velocidadMax)
         {

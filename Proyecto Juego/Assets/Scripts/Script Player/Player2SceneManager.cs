@@ -19,4 +19,12 @@ public class Player2SceneManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    void Update()
+    {
+        if(transform.parent == null)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
 }
