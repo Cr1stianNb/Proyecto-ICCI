@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29283aae8496fa14c9a6f909cafbe8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LastExitName: Lab10Exit1
+  LastExitName: EscuelaIng8Exit2
 --- !u!4 &90758280
 Transform:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90758278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.53, y: 2.65, z: -0.0069178627}
+  m_LocalPosition: {x: 5.68, y: 2.15, z: -0.0069178627}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -332,8 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634677316f723964d93e1cb4190eefb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Escuela Ing 2
-  exitName: 'EscuelaIng1Exit1 '
+  sceneToLoad: Escuela Ing 8
+  exitName: 'EscuelaIng6Exit1 '
 --- !u!61 &476910706
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -368,7 +368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476910704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.76, y: -2.04, z: 0}
+  m_LocalPosition: {x: 6.25, y: 2.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 673988205}
   - component: {fileID: 673988204}
   - component: {fileID: 673988203}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23530,7 +23530,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 54b1514799c57224ab28e8491f31897c, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
