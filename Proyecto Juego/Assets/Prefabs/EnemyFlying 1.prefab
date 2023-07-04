@@ -174,8 +174,10 @@ GameObject:
   - component: {fileID: 2566770575699770055}
   - component: {fileID: 2566770575699770072}
   - component: {fileID: 2566770575699770073}
-  - component: {fileID: 2566770575699770074}
+  - component: {fileID: 6196841552446279667}
   - component: {fileID: 2566770575699770054}
+  - component: {fileID: -8899964689030247332}
+  - component: {fileID: 1018694447041775446}
   m_Layer: 0
   m_Name: EnemyFlying 1
   m_TagString: Enemigo
@@ -244,7 +246,7 @@ MonoBehaviour:
   distanceToAttackPlayer: 1
   chaseSpeed: 2
   waitAfterAttack: 2
---- !u!114 &2566770575699770074
+--- !u!114 &6196841552446279667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,9 +258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03fe8c96aa71284f8992e6661241a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 10
-  cantPuntos: 0
-  empujeX: 0
+  vida: 3
+  cantPuntos: 5
+  empujeX: 1
   knockBack: {fileID: 0}
   canHit: 1
 --- !u!58 &2566770575699770054
@@ -277,3 +279,60 @@ CircleCollider2D:
   m_Offset: {x: 0.0037679374, y: 0}
   serializedVersion: 2
   m_Radius: 0.090444356
+--- !u!114 &-8899964689030247332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2566770575699770075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1f7818c41da27f4aa0fdb3b173b0576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theRB: {fileID: 0}
+  strength: 0
+  delay: 0
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: fd0b4238bd0662d41a4263058bbdfd7a, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: fd0b4238bd0662d41a4263058bbdfd7a, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1018694447041775446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2566770575699770075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f231bf3f572c5c245980818bd10f1f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

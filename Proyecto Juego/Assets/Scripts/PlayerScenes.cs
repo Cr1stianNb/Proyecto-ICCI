@@ -23,4 +23,13 @@ public class PlayerScenes : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+
+    void Update()
+    {
+        if(transform.parent == null)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
 }

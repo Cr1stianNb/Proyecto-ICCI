@@ -28,13 +28,15 @@ public class FlyingEnemyController : MonoBehaviour
             points[i].parent = null;
         }
 
-        players = GameObject.FindGameObjectsWithTag("Player");
+        //players = GameObject.FindGameObjectsWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(attackCounter > 0)
+        players = GameObject.FindGameObjectsWithTag("Player");
+
+        if (attackCounter > 0)
         {
             attackCounter -= Time.deltaTime;
         }

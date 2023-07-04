@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class JefeWorm : MonoBehaviour
 {
-    private Animator animator;
+    protected Animator animator;
 
     public Rigidbody2D theRB;
 
     public GameObject[] jugadores;
 
-    private bool mirandoDerecha = true;
+    protected bool mirandoDerecha = true;
 
-    private  bool canHit;
+    protected  bool canHit;
 
-    private SpriteRenderer theSR;
+    protected SpriteRenderer theSR;
 
     public float mitadVida;
 
