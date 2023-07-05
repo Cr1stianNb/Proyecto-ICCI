@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     {
         theRB = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        theSR = GetComponent<SpriteRenderer>();
+        //theSR = GetComponent<SpriteRenderer>();
 
         leftPoint.parent = null;
         rightPoint.parent = null;
