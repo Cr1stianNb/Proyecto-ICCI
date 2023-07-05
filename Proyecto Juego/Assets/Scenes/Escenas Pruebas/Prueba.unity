@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 848975329395144808, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3994328690674403417, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
       propertyPath: animator
       value: 
@@ -429,7 +433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &481274728
 Animator:
   serializedVersion: 5
@@ -715,10 +719,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66783b09624ae104881ca569807aac4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: {fileID: 120998341}
+  jugadores: []
   archivoDeGuardado: 
   datosJugador:
-    posicion: {x: 0, y: 0, z: 0}
+    buildIndexScene: 0
+    puntaje: 0
+    position: {x: 0, y: 0, z: 0}
+    canDoubleJump: 0
+    canWallJump: 0
+    canShot: 0
+    canMeleCombat: 0
+    currentHealth: 0
+    position2: {x: 0, y: 0, z: 0}
+    currentHealth2: 0
+    isSecondPlayer: 0
 --- !u!1 &822043851
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +824,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 121782084, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 121782084, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 121782084, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a02fe4b8289de9042916e9b7db8eebb2, type: 3}
+    - target: {fileID: 380464872, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 380464872, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 380464872, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5f98b9f7a2012c546b5272a560e6e67b, type: 3}
+    - target: {fileID: 2123424800, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123424800, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123424800, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0edd5143e8675ed49ae10d93f03719bb, type: 3}
     - target: {fileID: 2540287445520444361, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1400,7 +1450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1941725308
 MonoBehaviour:
   m_ObjectHideFlags: 0

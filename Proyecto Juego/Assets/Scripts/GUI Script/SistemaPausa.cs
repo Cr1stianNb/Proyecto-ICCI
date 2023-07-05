@@ -31,7 +31,7 @@ public class SistemaPausa : MonoBehaviour
             OnMenu?.Invoke();
             isPaused = true;
             menuPausa.SetActive(true);
-            Time.timeScale = 0;
+            Time.timeScale = 0f;
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && isPaused)
         {

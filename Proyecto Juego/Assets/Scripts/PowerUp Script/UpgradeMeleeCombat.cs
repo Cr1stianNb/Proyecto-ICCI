@@ -6,11 +6,11 @@ public class UpgradeMeleeCombat : MonoBehaviour
 {
   
     public ParticleSystem rayParticle;
-
+    private ParticleSystem particula;
 
     private void  Start()
     {
-        Instantiate(rayParticle, transform.position, Quaternion.identity);
+        particula =  Instantiate(rayParticle, transform.position, Quaternion.identity);
     }
 
 
@@ -20,6 +20,7 @@ public class UpgradeMeleeCombat : MonoBehaviour
         {
             Debug.Log("Upgrade triggered");
             CombateMele.canMeleCombat = true;
+            Destroy(particula);
             Destroy(gameObject);
 
         }

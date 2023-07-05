@@ -2,23 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 public class ControladorDatos : MonoBehaviour
 {
-   public GameObject jugador;
+   private static ControladorDatos instance;
+   public GameObject[] jugadores;
    public string archivoDeGuardado;
    public DatosJugador datosJugador = new DatosJugador();
 
 
+
    private void Awake()
    {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else 
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
         archivoDeGuardado = Application.dataPath + "/datosJuego.json";
-
-        jugador = GameObject.FindGameObjectWithTag("Player");
+        jugadores = GameObject.FindGameObjectsWithTag("Player");
    }
 
 
    private void Update()
    {
+        
+
         if(Input.GetKeyDown(KeyCode.S))
         {
             CargarDatos();
@@ -36,7 +49,8 @@ public class ControladorDatos : MonoBehaviour
            string contenido = File.ReadAllText(archivoDeGuardado);
            datosJugador = JsonUtility.FromJson<DatosJugador>(contenido);
 
-           jugador.transform.position = datosJugador.posicion;
+           FirstPlayer().transform.position = datosJugador.position;
+           SceneManager.LoadScene(datosJugador.buildIndexScene);
         }
         else 
         {
@@ -45,9 +59,12 @@ public class ControladorDatos : MonoBehaviour
    }
    private void GuardarDatos()
    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
         DatosJugador nuevosDatos = new DatosJugador()
         {
-            posicion = jugador.transform.position
+            position = FirstPlayer().transform.position,
+            buildIndexScene = currentSceneIndex
         };
 
         string cadenaJson = JsonUtility.ToJson(nuevosDatos);
@@ -55,5 +72,31 @@ public class ControladorDatos : MonoBehaviour
         File.WriteAllText(archivoDeGuardado, cadenaJson);
 
         Debug.Log("Archivo guardado");
+   }
+
+   private GameObject FirstPlayer()
+   {
+        foreach(GameObject player in jugadores)
+        {
+            if(player.GetComponent<PlayerScenes>() != null)
+            {
+                return player;
+            }
+        }
+
+        return null;
+   }
+
+    private GameObject SecondPlayer()
+   {
+        foreach(GameObject player in jugadores)
+        {
+            if(player.GetComponent<PlayerScenes>() == null)
+            {
+                return player;
+            }
+        }
+
+        return null;
    }
 }

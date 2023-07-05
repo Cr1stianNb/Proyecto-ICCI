@@ -214,6 +214,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 138279423, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138279424, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 138279424, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22
+      objectReference: {fileID: 0}
     - target: {fileID: 2540287445520444361, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -302,6 +314,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2540287446454492850, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 347f8c54160186e40a9ae7c6fce2b89c, type: 3}
 --- !u!1 &175605973
@@ -348,6 +364,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &402476924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 402476926}
+  - component: {fileID: 402476925}
+  m_Layer: 0
+  m_Name: ControladorDatos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &402476925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402476924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66783b09624ae104881ca569807aac4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugadores: []
+  archivoDeGuardado: 
+  datosJugador:
+    buildIndexScene: 0
+    puntaje: 0
+    position: {x: 0, y: 0, z: 0}
+    canDoubleJump: 0
+    canWallJump: 0
+    canShot: 0
+    canMeleCombat: 0
+    currentHealth: 0
+    position2: {x: 0, y: 0, z: 0}
+    currentHealth2: 0
+    isSecondPlayer: 0
+--- !u!4 &402476926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402476924}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3569534, y: 4.2146726, z: -0.07137237}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &439443385
 GameObject:
