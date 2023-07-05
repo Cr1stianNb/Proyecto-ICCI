@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Bala : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Bala : MonoBehaviour
     private void Start()
     {
         owner = transform.parent; 
+       
     }
 
     void Update()

@@ -49,7 +49,7 @@ public class SistemaPausa : MonoBehaviour
 
     public void IrMenuPrincipal()
     {
-        Destroy(player);
+        //Destroy(player);
         SalirMenuPausa();
         SceneManager.LoadScene(0);
         
