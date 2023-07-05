@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1273902024407871746}
   m_Layer: 0
   m_Name: Bala
-  m_TagString: Untagged
+  m_TagString: Bala
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 5
   danio: 20
-  disparoPlayer: {fileID: 848975329395144808, guid: 14e1824b6aac2d740b4c67d2084c44e5, type: 3}
 --- !u!114 &-4279720900016159791
 MonoBehaviour:
   m_ObjectHideFlags: 0
