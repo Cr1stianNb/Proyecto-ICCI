@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
+using System;
 public class ControladorDatos : MonoBehaviour
 {
    private static ControladorDatos instance;
    public GameObject[] jugadores;
    public string archivoDeGuardado;
    public DatosJugador datosJugador = new DatosJugador();
-
+   
 
 
    private void Awake()
@@ -28,21 +29,16 @@ public class ControladorDatos : MonoBehaviour
    }
 
 
-   private void Update()
+   private void Start()
    {
-        
-
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            CargarDatos();
-        }
-        if(Input.GetKeyDown(KeyCode.V))
-        {
-            GuardarDatos();
-        }
+        SistemaGuardado.OnSaved += GuardarDatos;
+        SistemaGuardado.OnLoad += CargarDatos;
    }
 
-   private void CargarDatos()
+
+  
+
+   private void CargarDatos(object sender, EventArgs e)
    {
         if(File.Exists(archivoDeGuardado))
         {
@@ -57,7 +53,7 @@ public class ControladorDatos : MonoBehaviour
             Debug.Log("No existe el archivo");
         }
    }
-   private void GuardarDatos()
+   private void GuardarDatos(object sender, EventArgs e)
    {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
@@ -65,6 +61,7 @@ public class ControladorDatos : MonoBehaviour
         {
             position = FirstPlayer().transform.position,
             buildIndexScene = currentSceneIndex
+
         };
 
         string cadenaJson = JsonUtility.ToJson(nuevosDatos);
