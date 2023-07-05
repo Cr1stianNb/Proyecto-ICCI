@@ -15,5 +15,9 @@ public class MenuInicial : MonoBehaviour
     Debug.Log("Salir");
    // Aplication.Quit();
    }
+   public void Creditos()
+   {
+      SceneManager.LoadScene("Creditos ^^");   
+   }
 }
   

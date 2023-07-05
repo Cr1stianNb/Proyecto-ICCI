@@ -156,6 +156,9 @@ EditorBuildSettings:
     path: Assets/Scenes/4 Escuela Ing/Escuela Ing 10.unity
     guid: 59aceec936f179945898a36222511a1f
   - enabled: 1
-    path: Assets/Scenes/5 Descenso a la locura/Creditos ^^.unity
+    path: Assets/Scenes/Creditos ^^.unity
     guid: e1d1686003afcdc4bbacc302ba9d6660
+  - enabled: 1
+    path: Assets/Scenes/Menu Principal.unity
+    guid: 5e38ab39b35bc5341a976da072bb1012
   m_configObjects: {}
