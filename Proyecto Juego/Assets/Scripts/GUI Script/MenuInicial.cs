@@ -20,7 +20,7 @@ public class MenuInicial : MonoBehaviour
    public void Salir()
    {
     Debug.Log("Salir");
-   // Aplication.Quit();
+    Aplication.Quit();
    }
    public void Creditos()
    {
