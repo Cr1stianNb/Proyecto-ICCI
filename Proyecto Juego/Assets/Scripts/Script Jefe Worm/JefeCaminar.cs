@@ -7,8 +7,8 @@ public class JefeCaminar : StateMachineBehaviour
 
     private JefeWorm jefe;
     private Rigidbody2D theRB;
-    private float velocidadLenta = 4f;
-    private float velocidadRapida = 1f;
+    private float velocidadLenta = 1f;
+    private float velocidadRapida = 3f;
     private float velocidadMovimiento;
 
 

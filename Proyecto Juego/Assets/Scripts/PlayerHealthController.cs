@@ -183,6 +183,7 @@ public class PlayerHealthController : MonoBehaviour
 
     public void RecuperarTodaLaSalud()
     {
+        animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         animator.SetBool("IsDead", false);
         rb2D.constraints = RigidbodyConstraints2D.None;

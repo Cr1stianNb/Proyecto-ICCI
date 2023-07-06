@@ -6,6 +6,20 @@ public class PlayerScenes : MonoBehaviour
 {
     
     public static PlayerScenes instance;
+    public  static  GameObject parent;
+
+    public static void destroyParent()
+    {
+        if(PlayerScenes.instance.transform.parent != null)
+        {
+            PlayerScenes.instance.transform.parent = null;
+            DontDestroyOnLoad(PlayerScenes.instance);
+        }
+        if(parent != null)
+        {
+            Destroy(parent);
+        }
+    }
 
     void Start()
     {
@@ -26,10 +40,29 @@ public class PlayerScenes : MonoBehaviour
 
     void Update()
     {
-        if(transform.parent == null)
+        if(transform.parent != null)
         {
-            DontDestroyOnLoad(gameObject);
+            parent = GetRootGameObject(transform.parent);
+            DontDestroyOnLoad(parent);
         }
+
+        
+       
+        
+        
     }
+
+    GameObject GetRootGameObject(Transform childTransform)
+    {
+        Transform currentTransform = childTransform;
+
+        while (currentTransform.parent != null)
+        {
+            currentTransform = currentTransform.parent;
+        }
+
+        return currentTransform.gameObject;
+    }
+
 
 }

@@ -78,14 +78,16 @@ public class JefeWorm : MonoBehaviour
     {
        
         int indexMenor = 0;
-
-        if( Vector3.Distance(transform.position, jugadores[0].transform.position) <= Vector3.Distance(transform.position, jugadores[1].transform.position))
+        if(jugadores.Length > 1)
         {
-            indexMenor = 0;
-        }
-        else 
-        {
-            indexMenor = 1;
+            if( Vector3.Distance(transform.position, jugadores[0].transform.position) <= Vector3.Distance(transform.position, jugadores[1].transform.position))
+            {
+                indexMenor = 0;
+            }
+            else 
+            {
+                indexMenor = 1;
+            }
         }
 
         if((jugadores[indexMenor].transform.position.x > transform.position.x && !mirandoDerecha) || (jugadores[indexMenor].transform.position.x < transform.position.x && mirandoDerecha))
