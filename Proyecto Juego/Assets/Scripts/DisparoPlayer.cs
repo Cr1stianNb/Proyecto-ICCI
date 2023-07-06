@@ -75,12 +75,14 @@ public class DisparoPlayer : MonoBehaviour
 
     private void Disparar()
     {
+        AudioManager.instance.PlaySFX(4);
         Instantiate(bala, controladorDisparo.position, controladorDisparo.rotation, transform);
         
     }
 
     private void DispararMedio()
     {
+        AudioManager.instance.PlaySFX(4);
         Instantiate(bala, controladorDisparoHalf.position, controladorDisparoHalf.rotation, transform);
        
     }

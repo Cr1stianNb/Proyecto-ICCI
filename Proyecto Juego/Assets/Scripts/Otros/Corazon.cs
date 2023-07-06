@@ -28,6 +28,7 @@ public class Corazon : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            AudioManager.instance.PlaySFX(5);
             Debug.Log("Entro");
             other.GetComponent<PlayerHealthController>().RecuperarSalud(vidaRecuperada);
             Destroy(gameObject);

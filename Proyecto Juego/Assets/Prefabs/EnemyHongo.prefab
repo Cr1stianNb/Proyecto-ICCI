@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 565885277}
   - component: {fileID: 2109077897}
   - component: {fileID: 44157165}
+  - component: {fileID: 5276499419913204170}
   m_Layer: 12
   m_Name: EnemyHongo
   m_TagString: Enemigo
@@ -174,6 +175,7 @@ MonoBehaviour:
   cantPuntos: 100
   empujeX: 10
   knockBack: {fileID: 0}
+  canHit: 1
 --- !u!114 &2109077897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +233,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &5276499419913204170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201893930231324402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b13e620ca3cac4db1df2397718c52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9201893930701680788
 GameObject:
   m_ObjectHideFlags: 0
