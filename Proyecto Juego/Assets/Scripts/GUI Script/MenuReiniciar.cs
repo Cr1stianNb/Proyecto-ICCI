@@ -10,6 +10,7 @@ using UnityEngine.Events;
 public class MenuReiniciar : MonoBehaviour
 {
     public GameObject menu;
+    public GameObject[] players;
    // public PlayerHealthController controladorHealth;
 
     public  UnityEvent OnBegin, OnDone;
@@ -17,6 +18,30 @@ public class MenuReiniciar : MonoBehaviour
     private void Start()
     {
         PlayerHealthController.MuerteJugador += AbrirMenu;
+        players = GameObject.FindGameObjectsWithTag("Player");
+
+    }
+
+    private void Update()
+    {
+        if(!isPlayer())
+        {
+            players = GameObject.FindGameObjectsWithTag("Player");
+
+        }
+    }
+
+    public bool isPlayer()
+    {
+        foreach(GameObject player in players)
+        {
+            if(player == null)
+            {
+                return false;
+            }
+        }
+
+        return true;
 
     }
 
@@ -26,11 +51,20 @@ public class MenuReiniciar : MonoBehaviour
         
         if(menu != null)
         {
+            PlayerScenes.destroyParent();
             menu.SetActive(true);
             Time.timeScale = 0;
             OnBegin?.Invoke();
         }
        
+    }
+
+    public void RecuperarSalud()
+    {
+        foreach(GameObject player in players)
+        {
+            player.GetComponent<PlayerHealthController>().RecuperarTodaLaSalud();
+        }
     }
 
     public  void InvokeOnBegin()
@@ -47,6 +81,7 @@ public class MenuReiniciar : MonoBehaviour
         OnDone?.Invoke();
         menu.SetActive(false);
         StartCoroutine(delayIgnoreLayer());
+        RecuperarSalud();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
        
         

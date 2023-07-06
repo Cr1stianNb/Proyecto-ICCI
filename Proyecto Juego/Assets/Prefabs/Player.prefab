@@ -354,7 +354,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848975329395144800}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b51b3a8b2035c94b99849f922ccf3ac, type: 3}
   m_Name: 
@@ -379,6 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f86e76e2bb3f948bb93a65aad9ecfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
 --- !u!114 &655060449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,7 +417,7 @@ MonoBehaviour:
   maxHealth: 2
   invincibleLength: 0
   player: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 848975329395144809}
   rb2D: {fileID: 0}
   knockBack: {fileID: 0}
   menuReiniciar: {fileID: 0}
