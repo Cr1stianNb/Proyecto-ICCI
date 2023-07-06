@@ -13,7 +13,10 @@ public class EntradaScenes : MonoBehaviour
         {
            
             PlayerScenes.instance.transform.position = transform.position;
-            Player2SceneManager.instance.transform.position = transform.position;
+            if(Player2SceneManager.isSecondPlayer)
+            {
+                Player2SceneManager.instance.transform.position = transform.position;
+            }
             Debug.Log("d");
         }
    }

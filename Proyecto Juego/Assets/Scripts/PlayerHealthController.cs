@@ -183,7 +183,9 @@ public class PlayerHealthController : MonoBehaviour
 
     public void RecuperarSalud(int salud)
     {
+        
         currentHealth += salud;
+        panelVida.UpdateHealthDisplay(this);
     }
 
     public void RecuperarTodaLaSalud()
