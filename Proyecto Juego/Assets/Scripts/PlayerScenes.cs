@@ -45,6 +45,8 @@ public class PlayerScenes : MonoBehaviour
             parent = GetRootGameObject(transform.parent);
             DontDestroyOnLoad(parent);
         }
+
+        
        
         
         

@@ -11,6 +11,7 @@ public class SalidaScenes : MonoBehaviour
    {
       if( collider.tag == "Player")
       {
+         PlayerScenes.destroyParent();
          PlayerPrefs.SetString("LastExitName", exitName);
          SceneManager.LoadScene(sceneToLoad);
       }
