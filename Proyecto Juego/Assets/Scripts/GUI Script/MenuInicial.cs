@@ -11,10 +11,13 @@ public class MenuInicial : MonoBehaviour
 
    public void Jugar()
    {
+      if (secondPlayer != null)
+      {
       Player2SceneManager.isSecondPlayer = false;
       secondPlayer.SetActive(false);
+      }
       PlayerPrefs.SetString("LastExitName", "null");
-      SceneManager.LoadScene(0);
+      SceneManager.LoadScene(2);
    }
 
    public void Salir()
@@ -33,7 +36,7 @@ public class MenuInicial : MonoBehaviour
       Player2SceneManager.isSecondPlayer = true;
       secondPlayer.SetActive(true);
       PlayerPrefs.SetString("LastExitName", "null");
-      SceneManager.LoadScene(0);
+      SceneManager.LoadScene(2);
    }
 }
   
