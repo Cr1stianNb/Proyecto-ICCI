@@ -1016,12 +1016,12 @@ GameObject:
   - component: {fileID: 779710887}
   - component: {fileID: 779710886}
   m_Layer: 5
-  m_Name: Jugador 2
-  m_TagString: Untagged
+  m_Name: IconoJugador2
+  m_TagString: Icono2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &779710885
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3219,5 +3219,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fa02ba3795df245857baaa845b408f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondPlayer: {fileID: 285740907}
   icon2: {fileID: 779710884}
+  secondPlayer: {fileID: 285740907}

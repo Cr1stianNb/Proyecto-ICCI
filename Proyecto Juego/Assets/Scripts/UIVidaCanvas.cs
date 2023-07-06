@@ -17,7 +17,7 @@ public class UIVidaCanvas : MonoBehaviour
   
     public void UpdateHealthDisplay()
     {
-        switch(PlayerHealthController.instance.currentHealth)
+        switch(GameObject.FindObjectOfType<PlayerScenes>().GetComponent<PlayerHealthController>().currentHealth)
         {
             case 10:
                 hearth.sprite = hearthFull;

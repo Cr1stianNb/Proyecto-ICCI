@@ -185,8 +185,10 @@ public class PlayerHealthController : MonoBehaviour
 
     public void RecuperarTodaLaSalud()
     {
+
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
+        UIVidaCanvas.instance.UpdateHealthDisplay();
         animator.SetBool("IsDead", false);
         rb2D.constraints = RigidbodyConstraints2D.None;
         rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;

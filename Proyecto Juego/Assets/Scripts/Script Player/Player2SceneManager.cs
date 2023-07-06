@@ -9,7 +9,7 @@ public class Player2SceneManager : MonoBehaviour
     public static ArrayList allParents = new ArrayList();
     public static bool isSecondPlayer = false;
   
-
+    
 
     public static void destroyParent()
     {
