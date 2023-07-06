@@ -11,35 +11,31 @@ public class PlayerController : MonoBehaviour
     public bool canMove = true;
     [SerializeField] private Vector2 vectorEmpuje; 
     [SerializeField] private BoxCollider2D boxCollider2d;
+
+
+    [Header("Componentes de movimiento")]
     public float moveSpeed;
     private float horizontal;
     public Rigidbody2D theRB;
     public float jumpForce;
-    
-    // suelo
     public Transform groundedCheckpoint;
     public float radioSuelo;
     public LayerMask whatIsGround;
     public Transform wallCheck;
     public LayerMask wallLayer;
-
     private bool isGrounded;
     public bool isFlip=false;
-
     public static bool isDoubleJump = false;
     public bool canDoubleJump;
-
-    private float tiempoEnElAire;
-    
-    private bool isWallSliding;
-    private float wallSlidingSpeed = 1f;
-    
     private float coyoteTime = 0.2f;
     private float contadorCoyoteTime;
 
+    [Header("Componentes de wallJump")]
+    private float tiempoEnElAire;
+    private bool isWallSliding;
+    private float wallSlidingSpeed = 1f;
     private float potenciadorTiempoSalto = 0.2f;
     private float contadorPotenciadorSalto;
-
     static public bool canWallJump = false;
     private bool isWallJumping;
     private float wallJumpingDirection;
@@ -47,11 +43,9 @@ public class PlayerController : MonoBehaviour
     private float wallJumpingCounter;
     private float wallJumpingDuration = 0.3f;
     private Vector2 wallJumpingPower = new Vector2( 2f, 4f);
+
     private bool isDoubleJumping;
-   
-
     public Transform controladorDisparo;
-
     public int cantSalto;
 
     // input buffer
@@ -69,7 +63,7 @@ public class PlayerController : MonoBehaviour
     private float fallMultiplier = 1f;
     private float lowJumpMultiplier = 1.6f;
 
-
+    // Multijugador inputs
     public string proyectoHorizontal;
     public string proyectoJump;
     private float extraHeightText = .2f;
@@ -84,7 +78,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         theSR = GetComponent<SpriteRenderer>();
         inputBuffer = new Queue<KeyCode>();
-        PlayerController.isDoubleJump = true;
+       
     }
 
     private void IsGrounded()
@@ -153,79 +147,19 @@ public class PlayerController : MonoBehaviour
             
            // Debug.Log(inputBuffer.Count);
         }
-
-
-            
+    
         if(Input.GetButtonUp(proyectoJump) && theRB.velocity.y > 0 && !isWallSliding )
         {
           //  theRB.velocity = new Vector2(theRB.velocity.x ,  theRB.velocity.y * 0.6f);
             contadorCoyoteTime = 0f;
             
         }
-        
-        
-         /*
-        if(inputBuffer.Count > 0)
-        {
-            #region salto
-                if(inputBuffer.Peek() == KeyCode.Space && !isWallSliding)
-                    {
-                    contadorPotenciadorSalto = potenciadorTiempoSalto;
-                    if(contadorCoyoteTime > 0f && contadorPotenciadorSalto > 0f)
-                    {
-                        theRB.velocity = new Vector2( theRB.velocity.x , jumpForce);
-                        contadorPotenciadorSalto = 0f;
-                        
-                        quitarAccion();
-                        
-                            
-                    }else 
-                    {
-                        if(!isWallSliding && inputBuffer.Count > 0)
-                        {
-                            if(canDoubleJump && inputBuffer.Peek() == KeyCode.Space )
-                            {
-                            
-                                theRB.velocity = new Vector2(theRB.velocity.x , jumpForce);
-                                canDoubleJump = false;
-                                quitarAccion();
-                                
-                                
-                            }
-    
-                        }
-                    }
-            
-                }
-                else 
-                {
-                    contadorPotenciadorSalto -= Time.deltaTime;
-                }
-            #endregion
-        }
-        */
-    
-
-       /*
-        if(canWallJump)
-        {
-            wallSlide();
-            wallJump();
-        }
-           
-      */
+       
 
         if(!isWallJumping)
         {
             isFlip = FlipSprite();
-        }
-       
-     
-
-       
-        
-           
-        
+        }     
     }
 
     void FixedUpdate()
