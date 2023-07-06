@@ -37,7 +37,7 @@ public class Bala : MonoBehaviour
         }
         else if(other.CompareTag("Player") && other.gameObject.transform != owner.transform)
         {
-            other.GetComponent<PlayerHealthController>().DealDamage((int)danio);
+            other.GetComponent<PlayerHealthController>().DealDamage(1);
         }
 
     }

@@ -5,19 +5,15 @@ using UnityEngine.UI;
 
 public class UIVidaCanvas : MonoBehaviour
 {
-    public static UIVidaCanvas instance;
+    
     public Image hearth, hearth2, hearth3, hearth4, hearth5;
     public Sprite hearthFull, hearthEmpty, hearthHalfe;
 
-    private void Awake()
-    {
-        instance = this;
-    }
     
   
-    public void UpdateHealthDisplay()
+    public void UpdateHealthDisplay(PlayerHealthController player)
     {
-        switch(PlayerHealthController.instance.currentHealth)
+        switch(player.currentHealth)
         {
             case 10:
                 hearth.sprite = hearthFull;

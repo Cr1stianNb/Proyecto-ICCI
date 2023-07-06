@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class PlayerHealthController : MonoBehaviour
     public KnockBack knockBack;
 
     public MenuReiniciar menuReiniciar;
+
+    public UIVidaCanvas panelVida;
 
     //private SpriteRenderer theSR;
 
@@ -71,7 +74,7 @@ public class PlayerHealthController : MonoBehaviour
     {   
     
         currentHealth -= daño;
-        UIVidaCanvas.instance.UpdateHealthDisplay();
+        panelVida.UpdateHealthDisplay(this);
         // PlayerControler.instance.anim.SetTrigger("Hurt");
 
         if(currentHealth<=0 && !estaMuerto)
@@ -112,7 +115,7 @@ public class PlayerHealthController : MonoBehaviour
     {   
     
         currentHealth -= daño;
-        UIVidaCanvas.instance.UpdateHealthDisplay();
+        panelVida.UpdateHealthDisplay(this);
 
         if(currentHealth<=0 && !estaMuerto)
         {
@@ -180,13 +183,17 @@ public class PlayerHealthController : MonoBehaviour
 
     public void RecuperarSalud(int salud)
     {
+        
         currentHealth += salud;
+        panelVida.UpdateHealthDisplay(this);
     }
 
     public void RecuperarTodaLaSalud()
     {
+
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
+        panelVida.UpdateHealthDisplay(this);
         animator.SetBool("IsDead", false);
         rb2D.constraints = RigidbodyConstraints2D.None;
         rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;

@@ -8,15 +8,15 @@ public class JefeIng : MonoBehaviour
     public float speed = 2f; // Velocidad de movimiento vertical
     public float fireRate = 2f; // Tasa de disparo en segundos
     public GameObject projectilePrefab; // Prefab del proyectil
-    public float timeToChangeDirection = 3f; // Tiempo en segundos antes de cambiar la dirección del movimiento
+    public float timeToChangeDirection = 10f; // Tiempo en segundos antes de cambiar la direcciï¿½n del movimiento
 
-    private float nextFireTime; // Tiempo para el próximo disparo
-    private float timeElapsed; // Tiempo transcurrido desde el cambio de dirección
-    private bool movingUp = true; // Indicador de dirección de movimiento
+    public float nextFireTime; // Tiempo para el prï¿½ximo disparo
+    public  float timeElapsed; // Tiempo transcurrido desde el cambio de direcciï¿½n
+    private bool movingUp = true; // Indicador de direcciï¿½n de movimiento
 
     private void Start()
     {
-        nextFireTime = Time.time + fireRate; // Inicializar el tiempo para el próximo disparo
+        nextFireTime = Time.time + fireRate; // Inicializar el tiempo para el prï¿½ximo disparo
     }
 
     private void Update()
@@ -28,7 +28,7 @@ public class JefeIng : MonoBehaviour
         // Incrementar el tiempo transcurrido
         timeElapsed += Time.deltaTime;
 
-        // Cambiar la dirección de movimiento si ha pasado el tiempo especificado
+        // Cambiar la direcciï¿½n de movimiento si ha pasado el tiempo especificado
         if (timeElapsed >= timeToChangeDirection)
         {
             movingUp = !movingUp;
@@ -39,13 +39,13 @@ public class JefeIng : MonoBehaviour
         if (Time.time >= nextFireTime)
         {
             FireProjectile();
-            nextFireTime = Time.time + fireRate; // Actualizar el tiempo para el próximo disparo
+            nextFireTime = Time.time + fireRate; // Actualizar el tiempo para el prï¿½ximo disparo
         }
     }
 
     private void FireProjectile()
     {
-        // Instanciar el proyectil en la posición y rotación del enemigo
+        // Instanciar el proyectil en la posiciï¿½n y rotaciï¿½n del enemigo
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         // Configurar la velocidad del proyectil
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();

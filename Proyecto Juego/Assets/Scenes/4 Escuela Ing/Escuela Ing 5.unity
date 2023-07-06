@@ -50045,7 +50045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4190857973378175458, guid: 37c7b68f6befe9f44a82219823361124, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.7
+      value: 2.92
       objectReference: {fileID: 0}
     - target: {fileID: 4190857973378175458, guid: 37c7b68f6befe9f44a82219823361124, type: 3}
       propertyPath: m_LocalPosition.z
@@ -142260,7 +142260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4190857973378175458, guid: 37c7b68f6befe9f44a82219823361124, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.92
+      value: 2.84
       objectReference: {fileID: 0}
     - target: {fileID: 4190857973378175458, guid: 37c7b68f6befe9f44a82219823361124, type: 3}
       propertyPath: m_LocalPosition.z
@@ -142449,7 +142449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29283aae8496fa14c9a6f909cafbe8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LastExitName: EscuelaIng5Exit3
+  LastExitName: EscuelaIng4Exit3
 --- !u!4 &1750556851
 Transform:
   m_ObjectHideFlags: 0
