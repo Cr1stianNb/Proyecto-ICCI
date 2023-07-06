@@ -7,6 +7,9 @@ public class PlayerScenes : MonoBehaviour
     
     public static PlayerScenes instance;
     public  static  GameObject parent;
+    public static ArrayList allParents = new ArrayList();
+  
+
 
     public static void destroyParent()
     {
@@ -15,11 +18,13 @@ public class PlayerScenes : MonoBehaviour
             PlayerScenes.instance.transform.parent = null;
             DontDestroyOnLoad(PlayerScenes.instance);
         }
-        if(parent != null)
+        foreach(GameObject parent in allParents)
         {
             Destroy(parent);
         }
+       
     }
+
 
     void Start()
     {
@@ -43,6 +48,7 @@ public class PlayerScenes : MonoBehaviour
         if(transform.parent != null)
         {
             parent = GetRootGameObject(transform.parent);
+            allParents.Add(parent);
             DontDestroyOnLoad(parent);
         }
 
