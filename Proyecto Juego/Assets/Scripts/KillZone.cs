@@ -11,9 +11,6 @@ public class KillZone : MonoBehaviour
             other.GetComponent<PlayerHealthController>().DealDamage(999);
                 
         }
-        else if(other.tag == "Enemigo")
-        {
-            other.GetComponent<Enemigo>().TomarDanio(9999);
-        }
+        
     }
 }
