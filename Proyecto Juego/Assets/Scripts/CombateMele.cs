@@ -20,7 +20,7 @@ public class CombateMele : MonoBehaviour
     public string proyectoFire2;
 
 
-    public static bool canMeleCombat = true;
+    public static bool canMeleCombat = false;
 
 
 

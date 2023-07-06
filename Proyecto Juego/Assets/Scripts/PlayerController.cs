@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     public bool isFlip=false;
 
-    public static bool isDoubleJump;
+    public static bool isDoubleJump = false;
     public bool canDoubleJump;
 
     private float tiempoEnElAire;
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     private float potenciadorTiempoSalto = 0.2f;
     private float contadorPotenciadorSalto;
 
-    static public bool canWallJump = true;
+    static public bool canWallJump = false;
     private bool isWallJumping;
     private float wallJumpingDirection;
     private float wallJumpingTime = 0.2f;
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         boxCollider2d = GetComponent<BoxCollider2D>();
-        PlayerPrefs.SetString("LastExitName", "");
+        //PlayerPrefs.SetString("LastExitName", "");
         anim = GetComponent<Animator>();
         theSR = GetComponent<SpriteRenderer>();
         inputBuffer = new Queue<KeyCode>();

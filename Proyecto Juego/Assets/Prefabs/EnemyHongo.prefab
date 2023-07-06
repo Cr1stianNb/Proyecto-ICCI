@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03fe8c96aa71284f8992e6661241a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 1000
+  vida: 60
   cantPuntos: 100
   empujeX: 10
   knockBack: {fileID: 0}

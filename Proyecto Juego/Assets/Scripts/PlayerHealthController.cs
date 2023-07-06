@@ -71,6 +71,7 @@ public class PlayerHealthController : MonoBehaviour
     {   
     
         currentHealth -= daño;
+        UIVidaCanvas.instance.UpdateHealthDisplay();
         // PlayerControler.instance.anim.SetTrigger("Hurt");
 
         if(currentHealth<=0 && !estaMuerto)
@@ -97,11 +98,11 @@ public class PlayerHealthController : MonoBehaviour
                 //PlayerController.instance.knockBack();
             }
 
-        //UIVidaCanvas.instance.UpdateHealthDisplay();
+        
 
             
 
-        }
+    }
 
     // UIControler.instance.UpdateHealthDisplay();
     
@@ -111,6 +112,7 @@ public class PlayerHealthController : MonoBehaviour
     {   
     
         currentHealth -= daño;
+        UIVidaCanvas.instance.UpdateHealthDisplay();
 
         if(currentHealth<=0 && !estaMuerto)
         {
@@ -137,7 +139,7 @@ public class PlayerHealthController : MonoBehaviour
             
         }
 
-    // UIControler.instance.UpdateHealthDisplay();
+    
     }
 
     private IEnumerator PerderControl()
