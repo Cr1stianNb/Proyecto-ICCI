@@ -51,7 +51,7 @@ public class SistemaPausa : MonoBehaviour
     {
         //Destroy(player);
         SalirMenuPausa();
-        SceneManager.LoadScene(51);
+        SceneManager.LoadScene(0);
         
 
     }
