@@ -7,7 +7,8 @@ public class MenuInicial : MonoBehaviour
 {
    public void Jugar()
    {
-      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+      PlayerPrefs.SetString("LastExitName", "null");
+      SceneManager.LoadScene(0);
    }
 
    public void Salir()
