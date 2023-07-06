@@ -51,7 +51,7 @@ public class JefeIng : MonoBehaviour
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.velocity = new Vector2(-1f, 0f); // Establecer la velocidad hacia la izquierda
+            rb.velocity = new Vector2(-8f, 0f); // Establecer la velocidad hacia la izquierda
         }
         else
         {
