@@ -85,7 +85,7 @@ public class Enemigo : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerHealthController>().DealDamage(5, transform);
+            other.gameObject.GetComponent<PlayerHealthController>().DealDamage(1, transform);
         }
     }
 

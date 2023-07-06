@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1999948901
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2120223640, guid: 23662813684b9f842a35e00e4fcf491e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -140,7 +140,7 @@ MonoBehaviour:
   velocidad: 0.5
   velocidadMax: 5
   velocidadImp: 0.6
-  danio: 5
+  danio: 1
   explosion: {fileID: 7675452257426040015, guid: 692c0a0bfbceff0429c640dc84cb6249, type: 3}
   fireBall: {fileID: 6897041579759156846}
 --- !u!114 &6897041579759156849

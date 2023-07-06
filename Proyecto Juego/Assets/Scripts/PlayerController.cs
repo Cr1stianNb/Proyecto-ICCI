@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         boxCollider2d = GetComponent<BoxCollider2D>();
-        PlayerPrefs.SetString("LastExitName", "");
+        //PlayerPrefs.SetString("LastExitName", "");
         anim = GetComponent<Animator>();
         theSR = GetComponent<SpriteRenderer>();
         inputBuffer = new Queue<KeyCode>();
