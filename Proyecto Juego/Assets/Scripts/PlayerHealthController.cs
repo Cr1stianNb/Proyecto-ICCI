@@ -190,6 +190,16 @@ public class PlayerHealthController : MonoBehaviour
         rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
+    public void StartSFXHurt()
+    {
+        AudioManager.instance.PlaySFX(0);
+    }
+
+    public void StartSFXJump()
+    {
+        AudioManager.instance.PlaySFX(3);
+    }
+
     
 
 

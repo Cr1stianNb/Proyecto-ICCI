@@ -34,7 +34,7 @@ public class DiamanteMonoBehaviour : MonoBehaviour
    {
      if(collider.CompareTag("Player"))
      {
-
+          AudioManager.instance.PlaySFX(6);
           Destroy(gameObject);
           DoSetActiveParticleFalse();
      }

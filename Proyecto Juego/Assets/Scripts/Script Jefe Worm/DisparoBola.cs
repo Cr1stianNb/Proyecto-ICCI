@@ -10,5 +10,6 @@ public class DisparoBola : MonoBehaviour
     public void dispararBola()
     {
         Instantiate(bola, controlador.position, controlador.rotation);
+        AudioManager.instance.PlaySFX(11);
     }
 }

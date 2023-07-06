@@ -20,7 +20,7 @@ public class CombateMele : MonoBehaviour
     public string proyectoFire2;
 
 
-    public static bool canMeleCombat = false;
+    public static bool canMeleCombat = true;
 
 
 
@@ -53,7 +53,7 @@ public class CombateMele : MonoBehaviour
 
     private void Golpe()
     {
-
+       
         //animator.SetTrigger("Golpe");
         Collider2D[] objetos = Physics2D.OverlapCircleAll(controladorGolpe.position, radioGolpe);
         
@@ -74,6 +74,16 @@ public class CombateMele : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(controladorGolpe.position, radioGolpe);
+    }
+
+    public void StartSFX()
+    {
+        AudioManager.instance.PlaySFX(2);
+    }
+
+    public void StartSlap()
+    {
+         AudioManager.instance.PlaySFX(1);
     }
 
    
